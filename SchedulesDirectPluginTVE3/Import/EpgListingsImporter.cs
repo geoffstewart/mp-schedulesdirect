@@ -949,6 +949,7 @@ namespace SchedulesDirect.Import
             prog.SeriesNum       = mpProgram.SeriesNum;
             prog.StarRating      = mpProgram.StarRating;
             prog.Title           = mpProgram.Title;
+            prog.EpisodeName     = mpProgram.EpisodeName;
             prog.Persist();
           }
           else
