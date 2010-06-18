@@ -43,6 +43,9 @@
       <HintPath>..\mplib\Gentle.Framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="PluginBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\mplib\PluginBase.dll</HintPath>
@@ -76,6 +79,9 @@
       <HintPath>..\mplib\TVDatabase.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="TvdbLib">
+      <HintPath>..\lib\TvdbLib.dll</HintPath>
+    </Reference>
     <Reference Include="TvLibrary.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\mplib\TvLibrary.Interfaces.dll</HintPath>
@@ -104,6 +110,7 @@
     </Compile>
     <Compile Include="SchedulesDirectWebService\SchedulesDirectWebService.cs" />
     <Compile Include="SchedulesDirectWebService\SoapEntities.cs" />
+    <Compile Include="TvDb\TvdbLibAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Plugin\SchedulesDirectPluginConfig.resx">
@@ -115,6 +122,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TvDb" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

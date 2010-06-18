@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -619,6 +620,116 @@ namespace SchedulesDirect.Plugin
       }
     }
 
+    static public bool UseTvDb
+    {
+      get {
+        string bstr = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_UseTvDbCom", "false").Value;
+        if (bstr.ToLower() == "true".ToLower()) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      set {
+        string sstr = "false";
+        if (value == true) {
+          sstr = "true";
+        }
+        Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_UseTvDbCom", "false");
+        mpSetting.Value = sstr;
+        mpSetting.Persist();
+      }
+    }
+    
+    static public bool TvDbLogDebug
+    {
+      get {
+        string bstr = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbLogDebug", "false").Value;
+        if (bstr.ToLower() == "true".ToLower()) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      set {
+        string sstr = "false";
+        if (value == true) {
+          sstr = "true";
+        }
+        Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbLogDebug", "false");
+        mpSetting.Value = sstr;
+        mpSetting.Persist();
+      }
+    }
+    
+    static public int TvDbNumberOfSeriesMappings
+    {
+      get { return Int32.Parse(tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbNumberOfSeriesMappings", "0").Value); }
+      set
+      {
+        Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbNumberOfSeriesMappings");
+        mpSetting.Value = value.ToString();
+        mpSetting.Persist();
+      }
+    }
+    
+    static public Hashtable TvDbSeriesMappings
+    {
+      get {
+        int num = TvDbNumberOfSeriesMappings;
+        Hashtable ht = new Hashtable();
+        
+        for (int i = 0; i < num; i++) {
+          string numStr = Convert.ToString(i);
+          Setting mapping = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbSeriesMapping_" + numStr);
+          if (mapping.Value.Length > 0 && !mapping.Value.Equals("empty")) {
+            string[] map = mapping.Value.Split('|');
+            if (map.Length == 2) {
+              ht.Add(map[0],map[1]);
+            }
+          }
+        }
+        
+        return ht;
+      }
+      set {
+        // value has to be a Hashtable
+
+        // clear the old values to handle delete
+        int currNum = TvDbNumberOfSeriesMappings;
+        for (int j = 0; j < currNum; j++) {
+          string numStr = Convert.ToString(j);
+          Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbSeriesMapping_" + numStr,"empty");
+          mpSetting.Value = "empty";
+          //Setting mpSetting = new Setting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbSeriesMapping_" + numStr,"empty");
+          mpSetting.Persist();
+        }
+        
+        int i = 0;
+        foreach(string kn in value.Keys) {
+          string kv = (string)value[kn];
+          string numStr = Convert.ToString(i);
+          Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbSeriesMapping_" + numStr);
+          mpSetting.Value = kn + "|" + kv;
+          mpSetting.Persist();
+          i++;
+        }
+        // update number of mappings
+        TvDbNumberOfSeriesMappings = i;
+      }
+    }
+    
+ 
+    static public string TvDbLibCache
+    {
+      get { return tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbLibCache", "%ProgramData%\\Team MediaPortal\\MediaPortal TV Server\\tvdblib_cache\\").Value; }
+      set
+      {
+        Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_TvDbLibCache", "%ProgramData%\\Team MediaPortal\\MediaPortal TV Server\\tvdblib_cache\\");
+        mpSetting.Value = value.ToString();
+        mpSetting.Persist();
+      }
+    }
     #endregion
 
     #region Internal Properties
