@@ -19,4 +19,24 @@ When the ScheduleDirect plugin retrieves your EPG database information, it now c
 
 The key here is that it will only query the shows that are set to be recorded (either once or over and over again).  That scales down the number of queries to thetvdb.com that are required.  *Be kind to thetvdb.com*, please.  Don't abuse it by setting this plugin to query just about all the shows in the database.  For my setup, that would result in about 80,000 queries for a full 13 day update.... very bad!
 
+= Setup =
 
+In the TV Server configuration tool, select the thetvdb.com tab.
+
+Enable the tvdb.com support by checking the box labeled "Do you want to search thetvdb.com for season and episode information?"
+
+The checkbox for logging is a work in progress.
+
+The Series Name Mapping is used when there is a discrepancy between the name of the show in SchedulesDirect and thetvdb.com.
+
+For example, I have a few mappings setup as follows:
+
+American Dad|American Dad!
+_for some reason, thetvdb.com has a ! at the end of this one_
+
+The Good Guys|The Good Guys (2010)
+_This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name_
+
+thetvdb.com access is provided by http://code.google.com/p/tvdblib/.  This great library caches the information from thetvdb.com to soften the blow on those servers.  You can specify the directory where the cache is stored.  Sometimes viewing the data from thetvdb.com directly helps debug why a show is not being matched properly.
+
+Lastly, thetvdb.com works because people contribute information and artwork to the database.  Please consider giving back to the community by doing so.
