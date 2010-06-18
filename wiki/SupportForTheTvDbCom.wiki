@@ -1,0 +1,22 @@
+= Introduction =
+
+The goal:  To record with MediaPortal and be able to have the recordings easily and automatically be added to MyTvSeries plugin using the SxxExx (Season/Episode) information.
+
+In the past, MediaPortal and SchedulesDirect users were not able to do this because the SchedulesDirect information did not contain the Season and Episode information.  
+
+This plugin tries to solve this problem by using thetvdb.com to fill in the Season and Episode information when SchedulesDirect populates it's epg database.
+
+
+= Details =
+
+When the ScheduleDirect plugin retrieves your EPG database information, it now checks the following:
+  * Is tvdb.com support enabled
+  * if yes, it continues, otherwise it finishes it's work with getting the program data.
+  * for each program being added to the EPG database, it asks:
+     # Is this program in the list of programs I'm scheduling to record?
+     # If yes, use the Program name to retrieve the SxxExx information from thetvdb.com
+     # If no, just save the program without thetvdb.com information
+
+The key here is that it will only query the shows that are set to be recorded (either once or over and over again).  That scales down the number of queries to thetvdb.com that are required.  *Be kind to thetvdb.com*, please.  Don't abuse it by setting this plugin to query just about all the shows in the database.  For my setup, that would result in about 80,000 queries for a full 13 day update.... very bad!
+
+
