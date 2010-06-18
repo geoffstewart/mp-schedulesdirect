@@ -40,3 +40,5 @@ _This type of mapping happens a lot when a show name is reused... to see if this
 thetvdb.com access is provided by http://code.google.com/p/tvdblib/.  This great library caches the information from thetvdb.com to soften the blow on those servers.  You can specify the directory where the cache is stored.  Sometimes viewing the data from thetvdb.com directly helps debug why a show is not being matched properly.
 
 Lastly, thetvdb.com works because people contribute information and artwork to the database.  Please consider giving back to the community by doing so.
+
+When you have 13 days of data already in your EPG, you'll find that it will take a few days before any episode number information will be usable.  If you're adventurous, you can use a database browser (like SquirrelSQL, etc.) to delete the records in the "program" table and then force an update.  This will ensure that all your scheduled recordings have episode number from thetvdb.com 
