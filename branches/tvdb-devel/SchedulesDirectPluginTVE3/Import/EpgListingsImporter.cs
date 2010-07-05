@@ -465,7 +465,7 @@ namespace SchedulesDirect.Import
          _useTvDb = PluginSettings.UseTvDb;
          bool logdebug = PluginSettings.TvDbLogDebug;
          if (_useTvDb) {
-           tvdb = new TvdbLibAccess();
+           tvdb = new TvdbLibAccess(logdebug);
          }
 
          foreach (SchedulesDirect.SoapEntities.TVSchedule tvSchedule in _results.Data.Schedules.List)
