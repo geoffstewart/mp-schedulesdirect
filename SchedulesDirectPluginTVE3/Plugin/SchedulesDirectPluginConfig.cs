@@ -133,7 +133,7 @@ namespace SchedulesDirect.Plugin
     {
       countryList = new TvLibrary.CountryCollection();
 
-      this.Text += " v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+      this.Text = PluginSetup.PLUGIN_NAME + " v" + PluginSetup.PLUGIN_VERSION;
       this.textBoxUsername.Text = PluginSettings.Username;
       this.textBoxPassword.Text = PluginSettings.Password;
       this.numericUpDownDays.Value = PluginSettings.GuideDays;

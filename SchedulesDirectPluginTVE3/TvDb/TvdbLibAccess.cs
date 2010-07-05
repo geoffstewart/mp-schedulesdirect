@@ -32,6 +32,16 @@ namespace SchedulesDirect.TvDb
 		
 		public TvdbLibAccess()
 		{
+		  init();
+		}
+		
+		public TvdbLibAccess(bool logDebug)
+		{
+		  logdebug = logDebug;
+		  init();
+		}
+		
+		private void init() {
 		  string cache = PluginSettings.TvDbLibCache;
 		  string tvdbid = "BBB734ABE146900D";  // mine, don't abuse it!!!
 		  tvdbHandler = new TvdbHandler(new XmlCacheProvider(cache),tvdbid);
