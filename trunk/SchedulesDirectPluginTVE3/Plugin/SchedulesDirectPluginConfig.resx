@@ -112,47 +112,47 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStripSeparator3.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="toolStripSeparator3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="toolStripSeparator2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="groupBoxImportOptions.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBoxImportOptions.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 15</value>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 17</value>
   </metadata>
-  <metadata name="mpLabel3.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpLabel3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="groupBoxLogon.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBoxLogon.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="linkSchedulesDirect.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="linkSchedulesDirect.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="tableLayoutPanel1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="tableLayoutPanel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>100, 17</value>
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>310, 17</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>173</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIUAAABYCAYAAADbejTNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAN1QAA
-        DdUBPdZY8QAAE5ZJREFUeF7tXQfUFcUVHuwtorGgRkUUKxYUEekIvwhiA0UFscWoBAuWiETRCNgwiqhg
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAN1AAA
+        DdQB75G6FQAAE5ZJREFUeF7tXQfUFcUVHuwtorGgRkUUKxYUEekIvwhiA0UFscWoBAuWiETRCNgwiqhg
         J2hEI8eCEmOiiMQWjQZ7JwqJiqIQG0oTyPftm3nM27fl7u7s4/0P/nPu2be7d2bu3PvNvXdnZvdvsGzZ
         MrXqb5UGSjRAUAAWW4HW835XipRqgzYbVqw90y+leqPdLVdAu+eh3SYVb9dnTxh/c1AX0EDQyaDV/DIV
         QKBUM1AHUFPQGhURXKlfoq2LQZ1Ba1WkzUJfR4KeBJ1W0YGg1BS0twA0ArRhxfprgUIDgaHBpldx3s6W
@@ -244,10 +244,10 @@
 Note: The more hours the longer updates take. Default is 24 hours.
 Note: With the exception of 24, you guide days must be greater and these hours.</value>
   </data>
-  <metadata name="groupBox5.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBox5.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="groupBox4.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBox4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
   <data name="checkBoxRemapChannelsOnLineupChange.ToolTip" xml:space="preserve">
@@ -257,10 +257,10 @@ existing channels. This can be useful if, for example,
 two station switch the channels they are broadcast on.
 Caution: May cause unpredictable results!</value>
   </data>
-  <metadata name="groupBox2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBox2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="groupBox1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="groupBox1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
   <data name="checkBoxAddAnalogChannels.ToolTip" xml:space="preserve">
@@ -268,13 +268,13 @@ Caution: May cause unpredictable results!</value>
 Schedules Direct they will be added to MediaPortal using the external input 
 selected for digital. *Not recommended, may cause unpredictable results.</value>
   </data>
-  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="mpLabel5.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpLabel5.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="mpGroupBoxChannelNaming.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpGroupBoxChannelNaming.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
   <data name="comboBoxNameFormat.ToolTip" xml:space="preserve">
@@ -287,7 +287,7 @@ use the following variables to make your own:
 {affiliate} E.g. UPN
 </value>
   </data>
-  <metadata name="mpLabel4.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpLabel4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
   <data name="mpLabel4.ToolTip" xml:space="preserve">
@@ -302,8 +302,8 @@ use the following variables to make your own:
   <data name="pictureBox8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAAlCAYAAAAJBxroAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAAitJREFUaEPtWQuNwzAM3TEYhEIYhEIYhEEohDEYhEIohEIohEIohO7eTp4sz47TJJPa
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAitJREFUaEPtWQuNwzAM3TEYhEIYhEIYhEEohDEYhEIohEIohEIohO7eTp4sz47TJJPa
         XiNFmhrH8fPzJ9F+TqfT/Dt3OQBsj/MP1F4GI+kAtglSD8Y2QRMz8v8ydr/f59Acx/HtJ/yOkfdkrPW2
         bee+76OCx2XM6211Xb8PwqGefIyMp+N8Pr8cGBrZwKCAvBhjdIyMB4zWL5eLic0FBkMwq6oy2SDWpml6
         yXZdN8OrpBy/8Q1rkKFQ4zKxYKScxZwLjFwCBaHDZewDLMnzcOUu1nRqhsIZyC/NEfimjWLApPElgZHh
@@ -318,8 +318,8 @@ use the following variables to make your own:
   <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAAlCAYAAAAJBxroAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAAj9JREFUaEPtWYFxgzAMpBtkhIzACIyQETICI2QDRmAERsgIGYERGIH221NPp75sY5eQ
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAj9JREFUaEPtWYFxgzAMpBtkhIzACIyQETICI2QDRmAERsgIGYERGIH221NPp75sY5eQ
         cPiOaw5sWa9/S4J+VFU1f127HAC2x+sH1F6GIukA9hakHoy9BU3KyYMxj7G2beemaX6vy+WSTe79fp/F
         ni49p9Pp2z6ePR6PJPtFjI3jSOveMAxJm8skAKrrOrmGAiT2Do0iYF3XUWeu12syMM9GrFkAi33fu/sU
         ATufz26Up2mKgrvdbnQ97AIwmBR5AggD66kjGxi0HooqHAsNOMzWg20WFNxjcgVgJstsYDjIspgxh3uh
@@ -335,8 +335,8 @@ use the following variables to make your own:
   <data name="pictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAAAlCAYAAAAk9TVSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAACFBJREFUaEPtm2WoVUsUx6/d3QEqBord9U0MFBEVVETExPxgoIiKiIhY2P1BUWxsxO5u
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAACFBJREFUaEPtm2WoVUsUx6/d3QEqBord9U0MFBEVVETExPxgoIiKiIhY2P1BUWxsxO5u
         bLG7u1vXe7+R2czZe/Y+ez/v874HZ8HmnnP2zFpr/rNm1XBTJSUlyd9PglIIAcBPPCmDwS/gE/TnEDCM
         PQH+n4P9l6QE+H8acUNeAvwE+CmIQAqKTlj+/wX89+/fy+HDh2Xfvn1y9OhR2b9/v3r4be/evXL+/Pm4
         S/n06ZMcOXJETp06JefOnVN/+f706dOYuT9//oz5/uHDBzl48KDs3LlTtm/f7jzocvfu3bhywwx4/fq1
@@ -377,8 +377,8 @@ use the following variables to make your own:
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAlCAYAAAA5iwvJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAA35JREFUWEftmcsrfGEYx43LuOSeW8hlxc5GLguUhYVsKEKWsrIWpYTCarbzB9iwIlm4
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAA35JREFUWEftmcsrfGEYx43LuOSeW8hlxc5GLguUhYVsKEKWsrIWpYTCarbzB9iwIlm4
         lkLJjihZEBG5JHcz4fub7+l3GGbe854zzvE7i99bT1Nzzvs+n3ne5/K+zzjCwsIefOL0CXxi5+HwwXkJ
         6HE4HEhMTLS1kJGsCnB6ejpubm7g9Xrx8vJiK/F4PLi9vUV+fv4ncEZGBp6enmDX8fz8jIKCgv/Alm2Q
         bgtPTU2hoaEBVVVVqKmpMUWqq6tRW1uLzs5OLCws4O3tTfpDdQHv7e0hJiaGfmOp9Pb2mgN8dHSErKws
@@ -399,8 +399,8 @@ use the following variables to make your own:
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAF8AAAAlCAYAAAAk9TVSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABhpJREFUaEPtm1lIVV0Ux50KTdFEwqkEhxKUSNDAtAchRSOQUEQNlBxTKNEiekgsFKnI
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABhpJREFUaEPtm1lIVV0Ux50KTdFEwqkEhxKUSNDAtAchRSOQUEQNlBxTKNEiekgsFKnI
         MrB88cGXItAURSOHh0IJXypLDSznBjSzyAzNTNfX//Ddyxn2Ge715vn4OAs2V+7ZZ++1fnudtdde52pv
         Z2dHf5ohOhEge3t78vT0NNoWMXB1dYXDc05PHh4eZMjWEbh3754Bf+twC2cy4OtF/s+8BnwDvo4EdJza
         8HwDvjyB79+/0+fPn2lycpK+fv3KtV+/fumITH7q5eVlmp2dpfn5eVpfX1fVUdbzf/z4QQUFBZSWlmZ1
@@ -432,8 +432,8 @@ use the following variables to make your own:
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAAlCAYAAAAJBxroAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAA7FJREFUaEPtWUsotGEUNhKG5JrLgkIupdnMTkgRKSkWkoVyyW0jFmIpyWUjpchtL5el
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAA7FJREFUaEPtWUsotGEUNhKG5JrLgkIupdnMTkgRKSkWkoVyyW0jFmIpyWUjpchtL5el
         LCQLGzZspJDbQpFCykIu5/e8+b5m5jvfzPvO+PvH/HPqbdR3vvOe533Od87zxhISEkJfKyCNLBYLxcfH
         B8SKiooCUYIsio2NpUCxmZmZILBfRWaQsV9F11eyQcb+BWNPT090e3tLV1dX9PDwINbHx4dUKqaMDQ8P
         U319vderpaWFent7aWRkhPb29twmc319Lfzq6uooPz+foqOjtVbN/kZERFBmZiaVlJRQe3s73dzcGOKb
@@ -455,8 +455,8 @@ use the following variables to make your own:
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAlCAYAAABVjVnMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAAnxJREFUWEftl0+IaXEUx7FgQqEYZUFZTQ2lNCuzYWHDwtZiFpM/m6mp2c3SRikbLCil
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAnxJREFUWEftl0+IaXEUx7FgQqEYZUFZTQ2lNCuzYWHDwtZiFpM/m6mp2c3SRikbLCil
         UFLChp1kIWo2GlaSQrFQExua/D3v/W5v5pm5P+4lz+v1/Op0L37nfH6/7z3n3B8mg8GAn/ZXBjCZTBCJ
         RCcxLpeLNkpsFgQCAZxqBIPBM/g0Yp+l3kvn2WwGo9EIOp0ODIdD4n4ymdCKQUvq+XwOuVwOHA4H3N7e
         glQqBRaL9VEO2KtYLAaNRgNmsxni8ThpMZTgVqsFWq2WFJzP54PRaASbzQZ2u52453A42EWgxtTtdr/A
@@ -478,8 +478,8 @@ dialogue, nudity and/or strong sexual content.</value>
   <data name="pictureBox14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACcAAAAlCAYAAADBa/A+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABoZJREFUWEfNWFlIVV0U1gYbFbNssMzETCJ86EEaqIfKijTSygENMUGrF7WyWcuwAcpK
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABoZJREFUWEfNWFlIVV0U1gYbFbNssMzETCJ86EEaqIfKijTSygENMUGrF7WyWcuwAcpK
         QbAMwVLoITI1cyiioELTyiIJIqLuWyNpg1Y2rP98S9f+zzn33KvXH37asDn3nL3W2t+a977ubm5uNnd3
         d98hQ4b0EJHbnz9/tE+uD43fjhffNNkOhZn3E3rtu4eG4z0YOzQBNHz4cNIWSXsf1Bw6dCiNGjXKTgZk
         QrZ5mvfCOvhHjBhBw4YNA4YOBieAVq1aRdeuXaPr16/zE7OxsZFqamqourqa55UrV6ihoUGtg+bmzZuU
@@ -521,8 +521,8 @@ Certain PG-13 or R rated feature films are rated TV-14 when edited for network o
   <data name="pictureBox13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABMBJREFUWEftWFkofV0Uv+YhXuQjZU4oyvSCDJmnB/KgiEQIJdOjTFF4o5C8yFDGB2V8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABMBJREFUWEftWFkofV0Uv+YhXuQjZU4oyvSCDJmnB/KgiEQIJdOjTFF4o5C8yFDGB2V8
         ME8hCcWDoqsoQ7qRIeP6ztqffb5zz7nHOfdSX339V63Oufusvfbv/PZaa69z9RQKhVJPT+8vAwOD18/P
         TwUAMEPqwh1jbAXP6RjOp6Kvr69A1eQP7dFWkz0zZszoDfpRMQ7A2NgYGHCISic1MTEBU1NTtbno18jI
         SKD8ddDGzMwM0IehoSH6UBFgFExGRgasra3BwsICLC4uEp2fn4fJyUmiExMTMDs7q/Z8dXUV+vv7wdXV
@@ -555,8 +555,8 @@ episode. A growing number of programs on Cartoon Network also carry this rating.
   <data name="pictureBox12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABdxJREFUWEfNV1lIVV0UdkjT0krMVNQKs4gUHCrLNDUkSRQi1JcgRMEB6cHqScJKSoye
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABdxJREFUWEfNV1lIVV0UdkjT0krMVNQKs4gUHCrLNDUkSRQi1JcgRMEB6cHqScJKSoye
         ijQcIhIVH5xwiNQccAqlAks0JYprZZFWRiniuP777d993Ofcc733Jvj/Gxbn3rP3Xvs7a/jW2uZmZmYa
         rThpZV4rZubm5njIBhFJ/9Xm+bvl5WVpnYWFBfuNd5iHiPM6h6y+sNb+nMTfKa3g5HXJ5s2bycbGRlWH
         FhRZWlrq1b9p0yaysrIS54FpFdj58+epp6eH2tvbqaOjg0lbWxs1NjYyaWhooKamJtl8d3c3lZaWkqen
@@ -593,8 +593,8 @@ Laboratory and Full House.</value>
   <data name="pictureBox11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABEdJREFUWEftmFkotV0Ux83zPJPkxpAxuRGhTCVX4sZ8o0xRUiQXwo0kiguUKCIlc8aI
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABEdJREFUWEftmFkotV0Ux83zPJPkxpAxuRGhTCVX4sZ8o0xRUiQXwo0kiguUKCIlc8aI
         G2WOXpmihPTVR8gUYb3+O2e/zznn4Tzn+456L+xa7fPsZ+29f3vttfdaz9HW0tL69S727/I3lX8Bc/0u
         BPH29qbCwkLKy8vjkpOTQ+np6ZSSksIkIyODcnNz+fv8/Hz27ObmRhEREZSdnc300tLSyMHBgY0rJv7+
         /pSZmUmpqamsj6enp1APTFr/yDpGR0fT5OQkjYyM0PDwMA0NDdHU1BQ9PT2RrNzc3NDY2Bh7B53R0VFW
@@ -629,8 +629,8 @@ Jimmy Neutron are issued this rating.</value>
   <data name="pictureBox10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAABJ9JREFUWEftWEkofX8UN09JMiazjJkilLGEBdnIEKXssFGKjQUbJaIo88qCEKJsUJQs
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAABJ9JREFUWEftWEkofX8UN09JMiazjJkilLGEBdnIEKXssFGKjQUbJaIo88qCEKJsUJQs
         DCXhIbMFGZJ65inOz+ebe937vPfuvbHwr/+p03Pv95zz/XzP+L0MDQwMVB/s+MF/iS4BRv3BBDYzMyMr
         KysRW1paEtjCwoIx/taUMTc3Z2u2trb8uomJCbOpiw0NDZkd2IMebEAW7z8xGZxzytXV1bS7u0sbGxuM
         VSoVra2t0fLyMs+rq6vsPScD+eHhYXJzc6Oenh7a2tpiOlNTU+Tn56cVmL29PdNZX1+nzc1N6u/vJ2dn
@@ -663,8 +663,8 @@ Go Baby, The New Adventures of Winnie the Pooh, and Thomas and Friends.
   <data name="pictureBox9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEwAA
-        CxMBAJqcGAAAA3dJREFUWEftmDlIM0EUxxPPwnj7oWAhth4oFoI2WokHXiiKooUIdqKghQgWFmLjjWBj
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAA3dJREFUWEftmDlIM0EUxxPPwnj7oWAhth4oFoI2WokHXiiKooUIdqKghQgWFmLjjWBj
         YeMtpBYbCfEoBMEUiohYWAQ/hCAo4vX//A/ufLsxybprkC188Nhk982bX/4z82Y2dpvN5nn3P+9uJftL
         GN+7g15QUIDm5mY0NDQIb2xsRG1tLSoqKqTX1NSI+0pMU1MTysrKkJaWBj6rqqoSXlpaKnIG88LCQlRX
         V6OyshL19fVISUkRsXa7nVcy2bxK44GBARwdHeHw8FD43t4eTk9P8fLygufnZ3G9uroS95UYxi8tLSE1
@@ -682,18 +682,18 @@ Go Baby, The New Adventures of Winnie the Pooh, and Thomas and Friends.
         VueWH0mlAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="mpLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="mpLabel2.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="mpLabel2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="imageListIcons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>372, 12</value>
+  <metadata name="imageListIcons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>600, 17</value>
   </metadata>
   <data name="imageListIcons.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACM
         OQAAAk1TRnQBSQFMAgEBAgEAAQQBAAEEAQABIwEAASgBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGM
@@ -944,17 +944,17 @@ Go Baby, The New Adventures of Winnie the Pooh, and Thomas and Friends.
         ASgDAAGMAwABKAMAAQEBAAEBBQABIAEDFgAD//8A/wD/ACQACw==
 </value>
   </data>
-  <metadata name="bgChannelGrabber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>16, 62</value>
+  <metadata name="bgChannelGrabber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>725, 17</value>
   </metadata>
-  <metadata name="bgLineupGrabber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 64</value>
+  <metadata name="bgLineupGrabber.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
   </metadata>
-  <metadata name="bgLineupSaver.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>24, 96</value>
+  <metadata name="bgLineupSaver.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 54</value>
   </metadata>
-  <metadata name="contextMenuStripLineUp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>203, 15</value>
+  <metadata name="contextMenuStripLineUp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>427, 17</value>
   </metadata>
   <data name="toolStripMenuItemListView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -986,4 +986,7 @@ Go Baby, The New Adventures of Winnie the Pooh, and Thomas and Friends.
         AElFTkSuQmCC
 </value>
   </data>
+  <metadata name="folderBrowserDialogTvDbCache.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 using SetupTv;
 using System.Reflection;
@@ -50,6 +52,9 @@ namespace SchedulesDirect.Plugin
       textBoxTVRatingPG.Validating += new CancelEventHandler(textBoxTVRatingPG_Validating);
       textBoxTVRating14.Validating += new CancelEventHandler(textBoxTVRating14_Validating);
       textBoxTVRatingMA.Validating += new CancelEventHandler(textBoxTVRatingMA_Validating);
+      
+      buttonAddMapping.Click += new EventHandler(buttonAddMapping_Click);
+      
     }
     #endregion
 
@@ -103,7 +108,24 @@ namespace SchedulesDirect.Plugin
       {
         PluginSettings.NextPoll = DateTime.Now;
       }
+      
+      //tvdb props
+      PluginSettings.UseTvDb = checkBoxUseTvDb.Checked;
+      PluginSettings.TvDbLogDebug = checkBoxLogDebug.Checked;
+      
+      Hashtable ht = new Hashtable();
+      foreach(string m in listBoxSeriesMapping.Items) {
+        string[] sp = m.Split('|');
+        if (sp.Length == 2) {
+          ht.Add(sp[0],sp[1]);
+        }
+      }
+      PluginSettings.TvDbSeriesMappings = ht;
+      
+     
 
+      PluginSettings.TvDbLibCache = textBoxTvDbLibCache.Text;
+      
       base.OnSectionDeActivated();
     }
 
@@ -111,7 +133,7 @@ namespace SchedulesDirect.Plugin
     {
       countryList = new TvLibrary.CountryCollection();
 
-      this.Text += " v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+      this.Text = PluginSetup.PLUGIN_NAME + " v" + PluginSetup.PLUGIN_VERSION;
       this.textBoxUsername.Text = PluginSettings.Username;
       this.textBoxPassword.Text = PluginSettings.Password;
       this.numericUpDownDays.Value = PluginSettings.GuideDays;
@@ -162,6 +184,19 @@ namespace SchedulesDirect.Plugin
       textBoxTVRating14.Text = PluginSettings.RatingsAgeTV_14.ToString();
       textBoxTVRatingMA.Text = PluginSettings.RatingsAgeTV_MA.ToString();
 
+      // thetvdb.com
+      checkBoxUseTvDb.Checked = PluginSettings.UseTvDb;
+      checkBoxLogDebug.Checked = PluginSettings.TvDbLogDebug;
+      
+      listBoxSeriesMapping.Items.Clear();
+      
+      Hashtable ht = PluginSettings.TvDbSeriesMappings;
+      foreach(string k in ht.Keys) {
+        string v = (string)ht[k];
+        listBoxSeriesMapping.Items.Add(k + "|" + v);
+      }
+
+      textBoxTvDbLibCache.Text = PluginSettings.TvDbLibCache;
     }
     #endregion
 
@@ -360,6 +395,56 @@ namespace SchedulesDirect.Plugin
     }
     #endregion
 
+    private void checkBoxUseTvDb_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonAddMapping_Click(object sender, EventArgs e)
+    {
+      string sdName = textBoxFromMapping.Text;
+      string tvDbName = textBoxToMapping.Text;
+      
+      if (sdName == null || sdName.Length == 0) {
+        //errorProvider.SetError(textBoxFromMapping,"SchedulesDirect Name must be filled in");
+        MessageBox.Show("SchedulesDirect Name must be filled in","Error",MessageBoxButtons.OK);
+        
+        return;
+      }
+      if (tvDbName == null || tvDbName.Length == 0) {
+        //errorProvider.SetError(textBoxToMapping,"thetvdb.com Name must be filled in");
+        MessageBox.Show("thetvdb.com Name must be filled in","Error",MessageBoxButtons.OK);
+        return;
+      }
+      string mapping = sdName + "|" + tvDbName;
+      listBoxSeriesMapping.Items.Add(mapping);
+    }
+    
+    private void buttonDeleteMapping_Click(object sender, EventArgs e)
+    {
+      Object currSel = listBoxSeriesMapping.Items[(listBoxSeriesMapping.SelectedIndex)];
+      // remove it
+      listBoxSeriesMapping.Items.Remove(currSel);
+      
+    }
+    
+  
+
+
+    private void textBoxTvDbLibCache_TextChanged(object sender, EventArgs e)
+    {
+      string myDir = textBoxTvDbLibCache.Text;
+      if (!Directory.Exists(myDir)) {
+        try {
+          Directory.CreateDirectory(myDir);
+          
+        } catch (Exception ex) {
+          MessageBox.Show("Unable to create the TvDbLib Cache directory.  Try creating it manually. " + ex.Message,"Error",MessageBoxButtons.OK);
+          return;
+        }
+        
+      }
+    }
 
   }
 }
