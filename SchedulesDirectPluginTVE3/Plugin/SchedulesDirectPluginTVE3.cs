@@ -9,12 +9,13 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 using TvEngine;
+using TvEngine.Events;
 using TvControl;
 using TvDatabase;
 using TvLibrary.Log;
 using Gentle.Common;
 using Gentle.Framework;
-//using SchedulesDirect;
+using TvLibrary.Interfaces;
 
 namespace SchedulesDirect.Plugin
 {
@@ -51,7 +52,13 @@ namespace SchedulesDirect.Plugin
     /// </summary>
     protected System.Threading.Timer timerThread;
 
-
+    /* <summary>
+     * This thread pool is used to asynchronously update the guide data with thetvdb.com information
+     * when a new schedule is added.  This is the handle to get the thread.
+     * </summary>
+     */
+    protected Thread tvdbThread;
+    
     #region ITvServerPlugin Start/Stop Members
     /// <summary>
     /// Starts this instance.
@@ -73,6 +80,14 @@ namespace SchedulesDirect.Plugin
 
       Log.WriteFile("Scheduling first poll for Schedules Direct listings at {0}", PluginSettings.NextPoll);
       SetThreadTimer(PluginSettings.NextPoll);
+      
+      // setup the thread for asynchronous updates to thetvdb.com info in the epg database.
+      tvdbThread = new Thread(AsyncTvDbInfoUpdate);
+      tvdbThread.Name = "TvDbThread";
+      Log.WriteFile("SD-TvDb: Kickoff initial lookup for all scheduled recordings");
+      tvdbThread.Start();
+      
+      GlobalServiceProvider.Instance.Get<ITvServerEvent>().OnTvServerEvent += SchedulesDirect_OnTvServerEvent;
     }
 
     /// <summary>
@@ -86,6 +101,11 @@ namespace SchedulesDirect.Plugin
         timerThread.Dispose();
         timerThread = null;
       }
+      
+      if (tvdbThread != null) {
+        tvdbThread.Abort();
+      }
+      GlobalServiceProvider.Instance.Get<ITvServerEvent>().OnTvServerEvent -= SchedulesDirect_OnTvServerEvent;
     }
     #endregion
 
@@ -824,6 +844,70 @@ namespace SchedulesDirect.Plugin
     }
     #endregion
 
-
+    #region eventhandlers
+    protected void AsyncTvDbInfoUpdate() {
+      if (Plugin.PluginSettings.UseTvDb) {
+        try
+        {
+          List<Schedule> l2 =(List<Schedule>) Schedule.ListAll();
+          Log.Info("SD-TvDb: Start asynch update of tvdb.com info for all schedule recordings.  Total number: {0}",
+                        Convert.ToString(l2.Count));
+          
+          bool logdebug = PluginSettings.TvDbLogDebug;
+          TvDb.TvdbLibAccess tvdb = new TvDb.TvdbLibAccess(logdebug);
+    
+          foreach (Schedule newShow in l2) {
+            if (newShow != null && newShow.ProgramName != null) {
+              string newShowName = newShow.ProgramName;
+              Log.Info("SD-TvDb: Update tvdb.com info for {0}",newShowName);
+              
+              List<Program> listOfNewShow = (List<Program>)Program.RetrieveByTitle(newShowName);
+              
+              string sid = tvdb.getSeriesId(newShowName);
+              if (sid != null || sid.Length >= 0) {
+                
+                foreach (Program p in listOfNewShow) {
+                  string zTitle = p.Title;
+                  string zEpisode = p.EpisodeName;
+                  DateTime zOrigAirDate = p.OriginalAirDate;
+                  
+                  string sep = tvdb.getSeasonEpisode(zTitle,sid,zEpisode,zOrigAirDate,true);
+                  
+                  if (sep != null && sep.Length > 0) {
+                    if (logdebug) {
+                      Log.Debug("Updating {0}: {1}: {2}: {3}",zTitle,zEpisode,sep,System.Convert.ToString(p.IdChannel));
+                    }
+                    p.EpisodeNum = sep;
+                    p.Persist();
+                  }
+                } // foreach Program
+              }
+            }
+          } //foreach Schedule
+          tvdb.closeCache();
+        } catch (Exception ex) {
+          Log.Error("Error trying to update tvdb.com info: {0}",ex.Message);
+        }
+        Log.Debug("SD-TvDb: Finished asynch update of tvdb.com info for all schedule recordings.");
+      }
+        
+    }
+    
+    protected void SchedulesDirect_OnTvServerEvent(object sender, EventArgs eventArgs)	{
+      TvServerEventArgs tvEvent = (TvServerEventArgs)eventArgs;
+      
+      if (tvEvent.EventType == TvServerEventType.ScheduledAdded &&
+          Plugin.PluginSettings.UseTvDb) {
+        Log.WriteFile("SD-TvDb: Request update of tvdb.com information for scheduled recordings");
+        if (tvdbThread.IsAlive) {
+          tvdbThread.Start();
+        } else {
+          tvdbThread = new Thread(AsyncTvDbInfoUpdate);
+          tvdbThread.Name = "TvDbThread";
+          tvdbThread.Start();
+        }
+      }
+    }
+    #endregion
   }
 }
