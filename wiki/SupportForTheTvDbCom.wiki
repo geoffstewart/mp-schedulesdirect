@@ -42,4 +42,8 @@ thetvdb.com access is provided by http://code.google.com/p/tvdblib/.  This great
 
 Lastly, thetvdb.com works because people contribute information and artwork to the database.  Please consider giving back to the community by doing so.
 
-When you have 13 days of data already in your EPG, you'll find that it will take a few days before any episode number information will be usable.  If you're adventurous, you can use a database browser (like SquirrelSQL, etc.) to delete the records in the "program" table and then force an update.  This will ensure that all your scheduled recordings have episode number from thetvdb.com 
+In the latest version (svn18 or later), the plugin will refresh all the tvdb.com information for all scheduled recordings every time a new recording is added or if the TVService.exe is started.  This means you don't have to wait for up to 13 days to get newly scheduled shows information.
+
+To get the most out of this plugin with tvdb information, you should add the episode number to the file name of recordings.  I have mine set to this:
+
+  %title%\%title% - %episode% - %name%
