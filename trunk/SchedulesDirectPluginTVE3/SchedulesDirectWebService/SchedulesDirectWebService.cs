@@ -208,9 +208,6 @@ namespace SchedulesDirect
                                                             RequestNamespace = "urn:TMSWebServices", ResponseNamespace = "")]
       public object download(string startTime, string endTime)
       {
-        // this changed on Tuesday, July 13, 2010... this didn't used to be necessary.
-        Log.WriteFile("do a preliminary acknowledge to authenticate properly");
-        this.acknowledge();
         object[] response = this.Invoke("download", new object[] {
                                           startTime,
                                           endTime });
