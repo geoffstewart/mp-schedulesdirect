@@ -416,7 +416,12 @@ namespace SchedulesDirect.Plugin
         MessageBox.Show("thetvdb.com Name must be filled in","Error",MessageBoxButtons.OK);
         return;
       }
-      string mapping = sdName + "|" + tvDbName;
+      string tvdbPrefix="";
+      if (checkBoxSeriesId.Checked) {
+         tvdbPrefix = "id=";
+      }
+      
+      string mapping = sdName + "|" + tvdbPrefix + tvDbName;
       listBoxSeriesMapping.Items.Add(mapping);
     }
     
@@ -445,6 +450,5 @@ namespace SchedulesDirect.Plugin
         
       }
     }
-
   }
 }

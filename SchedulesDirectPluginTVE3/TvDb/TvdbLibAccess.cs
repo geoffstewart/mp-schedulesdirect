@@ -57,6 +57,14 @@ namespace SchedulesDirect.TvDb
 		public string getSeriesId(string seriesName) {
 		  string searchSeries = seriesName;
 		  if (seriesNameMapping.Contains(seriesName)) {
+		    if (((string)seriesNameMapping[seriesName]).StartsWith("id=")) {
+   	      // we're doing a direct mapping from series to tvdb.com id
+   	      string seriesid = ((string)seriesNameMapping[seriesName]).Substring(3);
+   	      if (logdebug) {
+   		     Log.Debug("SD-TvDb: Direct mapping: series: " + searchSeries + "  id: " + seriesid);
+   		   }
+   	      return seriesid;
+   	    }
 		    searchSeries = (string)seriesNameMapping[seriesName];
 		  }
 			List<TvdbSearchResult> l = tvdbHandler.SearchSeries(searchSeries);
