@@ -1,12 +1,10 @@
 Source: http://code.google.com/p/mp-schedulesdirect/
-SVN Version: r18
-Built: August 19, 2010
+SVN Version: r21
+Built: October 4, 2010
 MP Verstion: 1.1.0 Final
 
 Description:
-This version restores behaviour with SchedulesDirect after the service interruption in mid-July 2010.  
-
-Also, this version will be a bit more aggressive to fill in the episode information for scheduled recordings.
+Added the ability to specify the tvdb.com series by ID... Use the check box to have it use the name field as an ID.
 
 Be sure to set your recording naming convetion to include the episode information so MyTVSeries can automatically figure out what episodes are recorded:
  
