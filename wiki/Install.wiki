@@ -1,0 +1,16 @@
+#summary How to install SchedulesDirect Plugin
+
+= Introduction =
+
+Simple outline of how to install the SD plugin
+
+
+= Details =
+
+  * Download the rar file from this site
+  * rar is a compressed file... use winrar or 7zip to uncompress it
+  * stop the MediaPortal TV Service
+  * Copy both DLL files into the MediaPortal TV Server\Plugins directory
+  * Start the TV Service
+  * Enable the SchedulesDirect plugin
+  
