@@ -278,7 +278,7 @@ namespace SchedulesDirect.Import
                string ch = chDetail.ChannelNumber.ToString();
 
                Log.WriteFile("EPGMapping for channel {0}-{1} (XmlTvId: {2}) no longer appears to be valid. Removing mapping to allow re-mapping.",
-                  ch, tvCh.Name, tvCh.ExternalId);
+                  ch, tvCh.DisplayName, tvCh.ExternalId);
 
                // Add to the cached if Analog and External
                if (chDetail.ChannelType == 0) // Analog
@@ -353,16 +353,16 @@ namespace SchedulesDirect.Import
                   mpChannel.ExternalId = BuildXmlTvId(lineup.IsLocalBroadcast(), tvStation, tvStationMap);  //tvStation.ID + XMLTVID;
                   if (_renameChannels)
                   {
-                     string oldName = mpChannel.Name;
-                     mpChannel.Name = BuildChannelName(tvStation, tvStationMap);
+                     string oldName = mpChannel.DisplayName;
                      mpChannel.DisplayName = BuildChannelName(tvStation, tvStationMap);
-                     RenameLogo(oldName, mpChannel.Name);
+                     mpChannel.DisplayName = BuildChannelName(tvStation, tvStationMap);
+                     RenameLogo(oldName, mpChannel.DisplayName);
                   }
                   stats._iChannels++;
 
                   mpChannel.Persist();
 
-                  Log.WriteFile("Updated channel {1} [id={0} xmlid={2}]", mpChannel.IdChannel, mpChannel.Name, mpChannel.ExternalId);
+                  Log.WriteFile("Updated channel {1} [id={0} xmlid={2}]", mpChannel.IdChannel, mpChannel.DisplayName, mpChannel.ExternalId);
                }
                else if ((_createChannels == true && lineup.IsAnalogue() == false)
                   || (_createChannels == true && _createAnalogChannels == true && lineup.IsAnalogue() == true))
@@ -371,7 +371,7 @@ namespace SchedulesDirect.Import
                   string cname = BuildChannelName(tvStation, tvStationMap);
                   string xId   = BuildXmlTvId(lineup.IsLocalBroadcast(), tvStation, tvStationMap);
 
-                  mpChannel = new Channel(cname, false, true, 0, Schedule.MinSchedule, false, Schedule.MinSchedule, 10000, true, xId, true, cname);
+                  mpChannel = new Channel(false, true, 0, Schedule.MinSchedule, false, Schedule.MinSchedule, 10000, true, xId, cname);
                   mpChannel.Persist();
 
                   TvLibrary.Implementations.AnalogChannel tuningDetail = new TvLibrary.Implementations.AnalogChannel();
@@ -406,7 +406,7 @@ namespace SchedulesDirect.Import
 
                   tvLayer.AddTuningDetails(mpChannel, tuningDetail);
 
-                  Log.WriteFile("Added channel {1} [id={0} xmlid={2}]", mpChannel.IdChannel, mpChannel.Name, mpChannel.ExternalId);
+                  Log.WriteFile("Added channel {1} [id={0} xmlid={2}]", mpChannel.IdChannel, mpChannel.DisplayName, mpChannel.ExternalId);
                   stats._iChannels++;
                }
                else
@@ -833,7 +833,7 @@ namespace SchedulesDirect.Import
         if (chList.Count > 0)
         {
            idTvChannel  = ((Channel)chList[0]).IdChannel;
-           strTvChannel = ((Channel)chList[0]).Name;
+           strTvChannel = ((Channel)chList[0]).DisplayName;
            return true;
         }
 
@@ -1044,14 +1044,11 @@ namespace SchedulesDirect.Import
         atscChannel.IsTv            = tuneDetail.IsTv;
         atscChannel.Name            = tuneDetail.Name;
         atscChannel.NetworkId       = tuneDetail.NetworkId;
-        atscChannel.PcrPid          = tuneDetail.PcrPid;
         atscChannel.PmtPid          = tuneDetail.PmtPid;
         atscChannel.Provider        = tuneDetail.Provider;
         atscChannel.ServiceId       = tuneDetail.ServiceId;
         //atscChannel.SymbolRate      = tuneDetail.Symbolrate;
         atscChannel.TransportId     = tuneDetail.TransportId;
-        atscChannel.AudioPid        = tuneDetail.AudioPid;
-        atscChannel.VideoPid        = tuneDetail.VideoPid;
 
         return true;
       }
@@ -1115,7 +1112,7 @@ namespace SchedulesDirect.Import
          if (GetChannelByName(station.CallSign, out idTvChannel) == true)
          {
             Channel mpChannel = Channel.Retrieve(idTvChannel);
-            Log.WriteFile("Matched channel {0} to {1} using CallSign", station.CallSign, mpChannel.Name);
+            Log.WriteFile("Matched channel {0} to {1} using CallSign", station.CallSign, mpChannel.DisplayName);
             FixDigitalTerrestrialChannelMap(idTvChannel, station, ref map);
             
             return mpChannel;
@@ -1144,7 +1141,7 @@ namespace SchedulesDirect.Import
                   if (map.ChannelMajor == atscChannel.MajorChannel && map.ChannelMinor == atscChannel.MinorChannel)
                   {
                      Log.WriteFile("Matched channel {0} to {1} by ATSC channel ({2}-{3})",
-                         station.CallSign, mpChannel.Name, atscChannel.MajorChannel, atscChannel.MinorChannel);
+                         station.CallSign, mpChannel.DisplayName, atscChannel.MajorChannel, atscChannel.MinorChannel);
 
                      return mpChannel;
                   }
@@ -1261,7 +1258,7 @@ namespace SchedulesDirect.Import
             ATSCChannel atscCh = new ATSCChannel();
             if (GetATSCChannel(mpChannel, ref atscCh))
             {
-               chi = new ChannelInfo(mpChannel.IdChannel, atscCh.MajorChannel, atscCh.MinorChannel, mpChannel.Name);
+               chi = new ChannelInfo(mpChannel.IdChannel, atscCh.MajorChannel, atscCh.MinorChannel, mpChannel.DisplayName);
             }
             else
             {
@@ -1270,7 +1267,7 @@ namespace SchedulesDirect.Import
                   continue;
                TuningDetail chDetail = (TuningDetail)chDetailList[0];
 
-               chi = new ChannelInfo(mpChannel.IdChannel, chDetail.ChannelNumber, 0, mpChannel.Name);
+               chi = new ChannelInfo(mpChannel.IdChannel, chDetail.ChannelNumber, 0, mpChannel.DisplayName);
             }
 
             listChannels.Add(chi);
