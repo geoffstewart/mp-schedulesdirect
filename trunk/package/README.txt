@@ -1,7 +1,7 @@
 Source: http://code.google.com/p/mp-schedulesdirect/
-SVN Version: r21
-Built: October 4, 2010
-MP Verstion: 1.1.0 Final
+SVN Version: r24
+Built: January 21, 2011
+MP Verstion: SVN 27297
 
 Description:
 Added the ability to specify the tvdb.com series by ID... Use the check box to have it use the name field as an ID.
