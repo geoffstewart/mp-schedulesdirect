@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using MediaPortal.Common.Utils;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -10,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SchedulesDirectPluginTVE3")]
-[assembly: AssemblyCopyright("Copyright ©  2007")]
+[assembly: AssemblyCopyright("Copyright ©  2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,3 +34,9 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.2.0.0")]
 [assembly: AssemblyFileVersion("1.2.0.0")]
+
+[assembly: CompatibleVersion("1.1.6.27644")]
+[assembly: UsesSubsystem("TVE.Controller")]
+[assembly: UsesSubsystem("TVE.DB")]
+[assembly: UsesSubsystem("TVE.Config")]
+[assembly: UsesSubsystem("TVE.Plugins")]
