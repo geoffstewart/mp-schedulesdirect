@@ -1,0 +1,11 @@
+#summary Config Wiki
+
+= Introduction =
+
+A wiki that tries to describe the configuration for the SchedulesDirect plugin.
+
+Most of the implementation existed prior to my involvement.  I added the tvvdb.com support.  But I will attempt to describe what each of the configurable items are.
+
+
+= Details =
+
