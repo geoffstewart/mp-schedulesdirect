@@ -55,9 +55,8 @@
     <StartProgram>..\..\..\..\Program Files %28x86%29\Team MediaPortal\MediaPortal TV Server\SetupTv.exe</StartProgram>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Utils, Version=1.1.6.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Team MediaPortal\MediaPortal\Common.Utils.dll</HintPath>
+    <Reference Include="Common.Utils">
+      <HintPath>..\mplib\Common.Utils.dll</HintPath>
     </Reference>
     <Reference Include="DirectShowLib, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
