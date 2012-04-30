@@ -69,4 +69,10 @@ For example, I have a few mappings setup as follows:
 
 American Dad|American Dad! for some reason, thetvdb.com has a ! at the end of this one
 
-The Good Guys|The Good Guys (2010) This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name
+The Good Guys|The Good Guys (2010) This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name.
+
+You can also specify the tvdb.com by series ID. In the setuptv.exe tool, you can use the checkbox in the mapping and in the tvdb.com field, enter the ID found on the website for the series in question.
+For "$..! My Dad Says", you would put "$..! My Dad Says" in the Schedules Direct name, and 164951 in the tvdb.com field as well as check the box that says Series ID before adding the mapping. The ID is found in the URL when you're looking at the series on thetvdb.com website.
+
+*TvDbLib Cache Location*:
+This part of the plugin uses this tvdblib to get info from thetvdb.com.  It does this by storing XML data for each show to cache the searches required to the actual site.  This value specifies the directory where the XML does will be stored.
