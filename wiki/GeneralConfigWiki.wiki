@@ -1,4 +1,5 @@
 #summary Config Wiki
+#labels Featured
 
 = Introduction =
 
