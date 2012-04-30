@@ -62,3 +62,11 @@ Part of the plugin's job is to match channels in SchedulesDirect to channels in 
 *Debug logging*: Not really useful for anyone but me :)
 
 *Mapping*
+
+The Series Name Mapping is used when there is a discrepancy between the name of the show in SchedulesDirect? and thetvdb.com.
+
+For example, I have a few mappings setup as follows:
+
+American Dad|American Dad! for some reason, thetvdb.com has a ! at the end of this one
+
+The Good Guys|The Good Guys (2010) This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name
