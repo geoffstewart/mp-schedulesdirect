@@ -8,4 +8,16 @@ Most of the implementation existed prior to my involvement.  I added the tvvdb.c
 
 
 = Details =
+== Config Page 1 ==
+<img src="http://mp-schedulesdirect.googlecode.com/svn/wiki/images/config-1.png" />
+
+The first page, shown above, has some relatively obvious fields to fill in. 
+
+Username: Schedules direct username
+Password: Schedules Direct password
+
+Number of days of guide data to keep:  This tells the plugin how many days ahead of now it should try to keep.  SD will only have 13 days of data (around that much), so that's the max.
+
+Last minute guide changes:  *looking for input*
+I think this field tells the plugin to refresh the data for the next 24 hours (if that's the setting) to get any changes in the data for the current day's recordings.
 
