@@ -45,7 +45,8 @@ namespace SchedulesDirect.Import
 
       private TvLibrary.Country _ExternalInputCountry = null;
       private TvLibrary.Implementations.AnalogChannel.VideoInputType _ExternalInput = TvLibrary.Implementations.AnalogChannel.VideoInputType.SvhsInput1;
-
+	  private TvLibrary.Implementations.AnalogChannel.AudioInputType _ExternalAudioInput = TvLibrary.Implementations.AnalogChannel.AudioInputType.SPDIFInput1;
+	  
       private Dictionary<string, object> _mpEpgMappingCache = new Dictionary<string, object>();
       private Dictionary<int, ATSCChannel> _mpAtscChannelCache = new Dictionary<int, ATSCChannel>();
       private Dictionary<string, int> _mpRatingAgeCache = new Dictionary<string,int>();
@@ -153,6 +154,15 @@ namespace SchedulesDirect.Import
          set { _ExternalInput = value; }
       }
 
+      /// <summary>
+      /// Gets or sets a value of the External Audio Input.
+      /// </summary>
+      /// <value>External Input for created Channels</value>
+      public TvLibrary.Implementations.AnalogChannel.AudioInputType ExternalAudioInput
+      {
+         get { return _ExternalAudioInput; }
+         set { _ExternalAudioInput = value; }
+      }
       /// <summary>
       /// Gets or sets a value indicating whether to sort the channels after import.
       /// </summary>
@@ -385,6 +395,7 @@ namespace SchedulesDirect.Import
                   //(int)PluginSettings.ExternalInput;
                   //tuningDetail.VideoSource = PluginSettings.ExternalInput;
                   tuningDetail.VideoSource = _ExternalInput; // PluginSettings.ExternalInput;
+                  tuningDetail.AudioSource = _ExternalAudioInput;
 
                   // Too much overhead using settings directly for country
                   if (_ExternalInputCountry != null)

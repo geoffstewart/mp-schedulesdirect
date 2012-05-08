@@ -127,8 +127,9 @@ namespace SchedulesDirect.Plugin
       Log.WriteFile("UTC time is {0}, local time is {1} (DST is {2})", DateTime.Now.ToUniversalTime(), DateTime.Now.ToLocalTime(), DateTime.Now.IsDaylightSavingTime());
       Log.WriteFile("Rename Existing Channels is set to: {0}, with Template: {1}.", PluginSettings.RenameExistingChannels.ToString(), PluginSettings.ChannelNameTemplate);
       Log.WriteFile("Add New Digital Channels is set to: {0}, with External Input: {1}.", PluginSettings.AddNewChannels.ToString(), PluginSettings.ExternalInput.ToString());
-      Log.WriteFile("Add New Digital Channels Country is set to: {0}.", PluginSettings.ExternalInputCountry.ToString());
+      Log.WriteFile("Add New Digital Channels is set to: {0}, with External Audio Input: {1}.", PluginSettings.AddNewChannels.ToString(), PluginSettings.ExternalAudioInput.ToString());      Log.WriteFile("Add New Digital Channels Country is set to: {0}.", PluginSettings.ExternalInputCountry.ToString());
       Log.WriteFile("Add New Analog Channels is set to: {0}, with External Input: {1}.", PluginSettings.AddAnalogChannels.ToString(), PluginSettings.ExternalInput.ToString());
+      Log.WriteFile("Add New Analog Channels is set to: {0}, with External Input: {1}.", PluginSettings.AddAnalogChannels.ToString(), PluginSettings.ExternalAudioInput.ToString());
       Log.WriteFile("Channel Sorting is set to: {0}.", PluginSettings.SortChannelsByNumber.ToString());
       Log.WriteFile("Allow Channel Matching without Frequency is set to: {0}.", PluginSettings.AllowChannelNumberOnlyMapping.ToString());
       Log.WriteFile("Delete Channels with No EPG Mapping is set to: {0}.", PluginSettings.DeleteChannelsWithNoEPGMapping.ToString());
@@ -302,6 +303,7 @@ namespace SchedulesDirect.Plugin
           epgListingsImporter.AllowChannelNumberOnlyMapping = PluginSettings.AllowChannelNumberOnlyMapping;
           epgListingsImporter.ExternalInputCountry = PluginSettings.ExternalInputCountry;
           epgListingsImporter.ExternalInput = PluginSettings.ExternalInput;
+          epgListingsImporter.ExternalAudioInput = PluginSettings.ExternalAudioInput;
           epgListingsImporter.AllowChannelSorting = PluginSettings.SortChannelsByNumber;
           epgListingsImporter.CreateAnalogChannels = PluginSettings.AddAnalogChannels;
           epgListingsImporter.RemapChannelsOnLineupChange = PluginSettings.RemapChannelsOnLineupChange;
