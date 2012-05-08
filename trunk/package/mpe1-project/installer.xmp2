@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0</Version>
+  <Groups>
+    <Items>
+      <GroupItem Name="Default">
+        <ParentGroup />
+        <DisplayName>Default</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Default</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
+              <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
+              <DestinationFilename>%TvServerPlugins%\TvdbLib.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+    </Items>
+  </Groups>
+  <Sections>
+    <Items>
+      <SectionItem Guid="f34066ac-23f5-44c7-9d42-7375d70f86f2" Name="Welcome Screen" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>Welcome to the Extension Installer for [Name]</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Description">
+              <Value>This will install [Name] version [Version] on your computer.
+It is recommended that you close all other applications before continuing.
+Click Next to continue or Cancel to exit Setup.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Welcome Screen</PanelName>
+        <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="f4bde32a-c32e-475b-8b75-436aec7ec10c" Name="Install Section" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items>
+            <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
+              <Params>
+                <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+          </Items>
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Install Section</PanelName>
+        <WizardButtonsEnum>Next</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="de08af7d-c460-4192-bd47-17d291d04f51" Name="Setup Complete" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Show radio buttons">
+              <Value />
+              <ValueType>Bool</ValueType>
+              <Description>Use radiobutton in place of combobox</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Setup Complete</PanelName>
+        <WizardButtonsEnum>Finish</WizardButtonsEnum>
+      </SectionItem>
+    </Items>
+  </Sections>
+  <Dependencies>
+    <Items>
+      <DependencyItem>
+        <Type>TvServer</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>2</Minor>
+          <Build>0</Build>
+          <Revision>3</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>2</Minor>
+          <Build>0</Build>
+          <Revision>3</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>requires TvServer version 1.2.3.</Message>
+        <Name>TvServer</Name>
+      </DependencyItem>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>requires MediaPortal version 1.1.6.27644 to 1.1.6.27644.</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
+  </Dependencies>
+  <PluginDependencies>
+    <Items />
+  </PluginDependencies>
+  <GeneralInfo>
+    <Name>SchedulesDirect Plugin</Name>
+    <Id>e14cf436-6e19-4b40-b65f-3bbc934ae521</Id>
+    <Author>Patrick</Author>
+    <HomePage>http://code.google.com/p/mp-schedulesdirect/</HomePage>
+    <ForumPage>http://forum.team-mediaportal.com/threads/schedules-direct-us-canadian-mexico-epg-plugin-updated-august-2010.26951/</ForumPage>
+    <UpdateUrl />
+    <Version>
+      <Major>1</Major>
+      <Minor>2</Minor>
+      <Build>3</Build>
+      <Revision>2</Revision>
+    </Version>
+    <ExtensionDescription>This plugin provides EPG data for users in Canada/US/Mexisco.  You need a ScheduleDirect account from schedulesdirect.org ($25/year).
+
+Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</ExtensionDescription>
+    <VersionDescription>Supports MP v1.2.3.
+
+Adds the ability to specify the audio input when the plugin creates new channels for digital cable and satellite users.</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
+    <OnlineLocation />
+    <ReleaseDate>2012-05-07T22:20:42.9186016-04:00</ReleaseDate>
+    <Tags>schedulesdirect epg tvdb</Tags>
+    <Location>C:\Users\geoff\Documents\sd-plugin\package\SchedulesDirectPlugin-1.2.3.2.mpe1</Location>
+    <Params>
+      <Items>
+        <SectionParam Name="Icon">
+          <Value />
+          <ValueType>File</ValueType>
+          <Description>The icon file of the package (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Online Icon">
+          <Value />
+          <ValueType>String</ValueType>
+          <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Configuration file">
+          <Value />
+          <ValueType>Template</ValueType>
+          <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+        </SectionParam>
+        <SectionParam Name="Online Screenshots">
+          <Value />
+          <ValueType>String</ValueType>
+          <Description>Online stored screenshot urls separated by ; </Description>
+        </SectionParam>
+        <SectionParam Name="Force to uninstall on update">
+          <Value>yes</Value>
+          <ValueType>Bool</ValueType>
+          <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+        </SectionParam>
+      </Items>
+    </Params>
+  </GeneralInfo>
+  <UniqueFileList>
+    <Items>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
+        <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
+        <DestinationFilename>%TvServerPlugins%\TvdbLib.dll</DestinationFilename>
+      </FileItem>
+    </Items>
+  </UniqueFileList>
+  <ProjectSettings>
+    <FolderGroups />
+    <ProjectFilename>installer.xmp2</ProjectFilename>
+    <UpdatePath1 />
+    <UpdatePath2 />
+    <UpdatePath3 />
+  </ProjectSettings>
+  <IsSkin>false</IsSkin>
+</PackageClass>

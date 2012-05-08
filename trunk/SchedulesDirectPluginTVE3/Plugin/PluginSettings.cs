@@ -276,7 +276,26 @@ namespace SchedulesDirect.Plugin
         mpSetting.Persist();
       }
     }
-
+    
+    /// <summary>
+    /// Gets or sets the audio input for external auto-added channels.
+    /// </summary>
+    /// <value>The external channel input.</value>
+    static public AnalogChannel.AudioInputType ExternalAudioInput
+    {
+      get
+      {
+        string gstr = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_ExternalAudioInput", "SPDIFInput1").Value;
+        return (AnalogChannel.AudioInputType)Enum.Parse(typeof(AnalogChannel.AudioInputType), gstr, true);
+      }
+      set
+      {
+        string sstr = Enum.GetName(typeof(AnalogChannel.AudioInputType), value);
+        Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_ExternalAudioInput", "SPDIFInput1");
+        mpSetting.Value = sstr;
+        mpSetting.Persist();
+      }
+    }
     /// <summary>
     /// Gets or sets the country for external auto-added channels.
     /// </summary>

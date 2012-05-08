@@ -61,6 +61,7 @@ namespace SchedulesDirect.Plugin
         this.comboBoxExternalInputCountry = new System.Windows.Forms.ComboBox();
         this.checkBoxAddChannels = new System.Windows.Forms.CheckBox();
         this.comboBoxExternalInput = new System.Windows.Forms.ComboBox();
+        this.comboBoxExternalAudioInput = new System.Windows.Forms.ComboBox();
         this.comboBoxNameFormat = new System.Windows.Forms.ComboBox();
         this.checkBoxRenameChannels = new System.Windows.Forms.CheckBox();
         this.imageListIcons = new System.Windows.Forms.ImageList(this.components);
@@ -500,6 +501,7 @@ namespace SchedulesDirect.Plugin
         groupBox1.Controls.Add(label1);
         groupBox1.Controls.Add(this.checkBoxAddChannels);
         groupBox1.Controls.Add(this.comboBoxExternalInput);
+        groupBox1.Controls.Add(this.comboBoxExternalAudioInput);
         groupBox1.Controls.Add(mpLabel5);
         groupBox1.Location = new System.Drawing.Point(6, 77);
         groupBox1.Name = "groupBox1";
@@ -548,7 +550,7 @@ namespace SchedulesDirect.Plugin
         this.checkBoxAddChannels.Location = new System.Drawing.Point(15, 14);
         this.checkBoxAddChannels.Name = "checkBoxAddChannels";
         this.checkBoxAddChannels.Size = new System.Drawing.Size(275, 17);
-        this.checkBoxAddChannels.TabIndex = 25;
+        this.checkBoxAddChannels.TabIndex = 26;
         this.checkBoxAddChannels.Text = "&Automatically add new digital cable/satellite channels";
         this.toolTip.SetToolTip(this.checkBoxAddChannels, "If this is checked then when new digital cable and satellite channels are added t" +
                 "o \r\nSchedules Direct they will be added to MediaPortal.");
@@ -560,10 +562,18 @@ namespace SchedulesDirect.Plugin
         this.comboBoxExternalInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         this.comboBoxExternalInput.Location = new System.Drawing.Point(207, 33);
         this.comboBoxExternalInput.Name = "comboBoxExternalInput";
-        this.comboBoxExternalInput.Size = new System.Drawing.Size(133, 21);
+        this.comboBoxExternalInput.Size = new System.Drawing.Size(103, 21);
         this.comboBoxExternalInput.TabIndex = 24;
         this.toolTip.SetToolTip(this.comboBoxExternalInput, "Only used for external tuners when \r\nadding channels automatically.");
         // 
+        // comboBoxExternalAudioInput
+        // 
+        this.comboBoxExternalAudioInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        this.comboBoxExternalAudioInput.Location = new System.Drawing.Point(317, 33);
+        this.comboBoxExternalAudioInput.Name = "comboBoxExternalAudioInput";
+        this.comboBoxExternalAudioInput.Size = new System.Drawing.Size(103, 21);
+        this.comboBoxExternalAudioInput.TabIndex = 25;
+        this.toolTip.SetToolTip(this.comboBoxExternalAudioInput, "Only used for external tuners when \r\nadding channels automatically.");        // 
         // mpLabel5
         // 
         mpLabel5.AutoSize = true;
@@ -571,7 +581,7 @@ namespace SchedulesDirect.Plugin
         mpLabel5.Name = "mpLabel5";
         mpLabel5.Size = new System.Drawing.Size(189, 13);
         mpLabel5.TabIndex = 23;
-        mpLabel5.Text = "&External Video Input for new channels:";
+        mpLabel5.Text = "&Video/Audio Inputs for new channels:";
         this.toolTip.SetToolTip(mpLabel5, "Only used for external tuners when \r\nadding channels automatically.");
         // 
         // mpGroupBoxChannelNaming
@@ -1596,6 +1606,7 @@ namespace SchedulesDirect.Plugin
       public System.Windows.Forms.CheckBox checkboxForceUpdate;
       public System.Windows.Forms.CheckBox checkBoxAddChannels;
       public System.Windows.Forms.ComboBox comboBoxExternalInput;
+      public System.Windows.Forms.ComboBox comboBoxExternalAudioInput;
       public System.Windows.Forms.ComboBox comboBoxNameFormat;
       public System.Windows.Forms.CheckBox checkBoxRenameChannels;
       private System.Windows.Forms.Button okButton;

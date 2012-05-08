@@ -71,7 +71,8 @@ namespace SchedulesDirect.Plugin
       PluginSettings.ChannelNameTemplate = comboBoxNameFormat.Text;
       PluginSettings.NotifyOnCompletion = checkBoxNotification.Checked;
       PluginSettings.ExternalInput = (TvLibrary.Implementations.AnalogChannel.VideoInputType)Enum.Parse(typeof(TvLibrary.Implementations.AnalogChannel.VideoInputType), comboBoxExternalInput.SelectedItem.ToString());
-      PluginSettings.AllowChannelNumberOnlyMapping = checkBoxAllowChannelNumberOnlyMapping.Checked;
+      PluginSettings.ExternalAudioInput = (TvLibrary.Implementations.AnalogChannel.AudioInputType)Enum.Parse(typeof(TvLibrary.Implementations.AnalogChannel.AudioInputType), comboBoxExternalAudioInput.SelectedItem.ToString());
+	  PluginSettings.AllowChannelNumberOnlyMapping = checkBoxAllowChannelNumberOnlyMapping.Checked;
       PluginSettings.ExternalInputCountry = countryList.GetTunerCountry(comboBoxExternalInputCountry.SelectedItem.ToString());
       PluginSettings.SortChannelsByNumber = checkBoxSortChannelsByChannelNumber.Checked;
       PluginSettings.DeleteChannelsWithNoEPGMapping = checkBoxDeleteChannelsWithNoEPGMapping.Checked;
@@ -147,6 +148,11 @@ namespace SchedulesDirect.Plugin
       this.comboBoxExternalInput.SelectedIndex = this.comboBoxExternalInput.FindStringExact(PluginSettings.ExternalInput.ToString());
       this.comboBoxExternalInput.Enabled = this.checkBoxAddChannels.Checked;
 
+      this.comboBoxExternalAudioInput.Items.Clear();
+      this.comboBoxExternalAudioInput.Items.AddRange(Enum.GetNames(typeof(TvLibrary.Implementations.AnalogChannel.AudioInputType)));
+      this.comboBoxExternalAudioInput.SelectedIndex = this.comboBoxExternalAudioInput.FindStringExact(PluginSettings.ExternalAudioInput.ToString());
+      this.comboBoxExternalAudioInput.Enabled = this.checkBoxAddChannels.Checked;
+      
       this.comboBoxExternalInputCountry.Items.Clear();
       this.comboBoxExternalInputCountry.Items.AddRange(countryList.Countries);
       this.comboBoxExternalInputCountry.SelectedIndex = this.comboBoxExternalInputCountry.FindStringExact(PluginSettings.ExternalInputCountry.ToString());
@@ -270,6 +276,8 @@ namespace SchedulesDirect.Plugin
     private void checkBoxAddChannels_CheckedChanged(object sender, EventArgs e)
     {
       comboBoxExternalInput.Enabled = checkBoxAddChannels.Checked;
+      comboBoxExternalAudioInput.Enabled = checkBoxAddChannels.Checked;
+      
       if (!checkBoxAddChannels.Checked)
         checkBoxAddAnalogChannels.Checked = false;
 
