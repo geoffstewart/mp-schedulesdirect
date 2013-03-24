@@ -73,7 +73,8 @@ namespace SchedulesDirect.Plugin
 
       // If our next poll is after the last program entry, update the data now so we don't run too short
       if (PluginSettings.NextPoll > GetLastProgramEntry()
-          || PluginSettings.NextPoll < DateTime.Now)
+          || PluginSettings.NextPoll < DateTime.Now
+          || PluginSettings.ForceFullGuideUpdate)
       {
         PluginSettings.NextPoll = DateTime.Now.AddSeconds(15);
       }
@@ -331,7 +332,7 @@ namespace SchedulesDirect.Plugin
         #region Full Epg update
         // Determine if there have been any changes in the Schedules Direct channel lineup
         //channelHash = GetStationsHash(listingData.Data.Stations);
-        if (!lineupHasChanged)
+        if (!lineupHasChanged && !PluginSettings.ForceFullGuideUpdate)
         {
           Log.WriteFile("No changes detected in Schedules Direct channel lineup");
           // Set start of full grab to the end of the first grab or the midnight of the last epg program in db if later
@@ -339,8 +340,16 @@ namespace SchedulesDirect.Plugin
         }
         else
         {
-          Log.WriteFile("Detected a change in Schedules Direct channel lineup fingerprint, resetting start date");
-          PluginSettings.ChannelFingerprint = channelHash;
+          if (PluginSettings.ForceFullGuideUpdate)
+          {
+            Log.WriteFile("Full update forced by user in plugin settings");
+            PluginSettings.ForceFullGuideUpdate = false;
+          }
+          else
+          {
+            Log.WriteFile("Detected a change in Schedules Direct channel lineup fingerprint, resetting start date");
+            PluginSettings.ChannelFingerprint = channelHash;
+          }
           startDate = endDate; // Set the start date to the previous end update end date (e.g. 24 hours from now)
         }
 

@@ -79,6 +79,7 @@ namespace SchedulesDirect.Plugin
       PluginSettings.AddExtraDataToShowDescription = checkBoxAddExtraDataToShowDescription.Checked;
       PluginSettings.RemapChannelsOnLineupChange = checkBoxRemapChannelsOnLineupChange.Checked;
       PluginSettings.AddAnalogChannels = checkBoxAddAnalogChannels.Checked;
+      PluginSettings.ForceFullGuideUpdate = checkboxForceUpdate.Checked;
 
       if (radioButtonUpdateLatestHours36.Checked == true && PluginSettings.GuideDays > 1)
         PluginSettings.LastMinuteGuideHours = 36;
@@ -103,13 +104,7 @@ namespace SchedulesDirect.Plugin
       PluginSettings.RatingsAgeTV_PG = RatingParse(textBoxTVRatingPG.Text);
       PluginSettings.RatingsAgeTV_14 = RatingParse(textBoxTVRating14.Text);
       PluginSettings.RatingsAgeTV_MA = RatingParse(textBoxTVRatingMA.Text);
-
-
-      if (checkboxForceUpdate.Checked)
-      {
-        PluginSettings.NextPoll = DateTime.Now;
-      }
-      
+     
       //tvdb props
       PluginSettings.UseTvDb = checkBoxUseTvDb.Checked;
       PluginSettings.TvDbLogDebug = checkBoxLogDebug.Checked;
@@ -165,6 +160,7 @@ namespace SchedulesDirect.Plugin
       this.checkBoxAddExtraDataToShowDescription.Checked = PluginSettings.AddExtraDataToShowDescription;
       this.checkBoxRemapChannelsOnLineupChange.Checked = PluginSettings.RemapChannelsOnLineupChange;
       this.checkBoxAddAnalogChannels.Checked = PluginSettings.AddAnalogChannels;
+      this.checkboxForceUpdate.Checked = PluginSettings.ForceFullGuideUpdate;
 
       if (PluginSettings.LastMinuteGuideHours == 36)
         radioButtonUpdateLatestHours36.Checked = true;
@@ -403,11 +399,6 @@ namespace SchedulesDirect.Plugin
     }
     #endregion
 
-    private void checkBoxUseTvDb_CheckedChanged(object sender, EventArgs e)
-    {
-
-    }
-
     private void buttonAddMapping_Click(object sender, EventArgs e)
     {
       string sdName = textBoxFromMapping.Text;
@@ -440,9 +431,6 @@ namespace SchedulesDirect.Plugin
       listBoxSeriesMapping.Items.Remove(currSel);
       
     }
-    
-  
-
 
     private void textBoxTvDbLibCache_TextChanged(object sender, EventArgs e)
     {
@@ -458,5 +446,11 @@ namespace SchedulesDirect.Plugin
         
       }
     }
+
+    private void labelTvDbComAdvert_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        System.Diagnostics.Process.Start("http://thetvdb.com");
+    }
+
   }
 }
