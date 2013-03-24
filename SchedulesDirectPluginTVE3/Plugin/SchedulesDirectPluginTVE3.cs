@@ -106,7 +106,11 @@ namespace SchedulesDirect.Plugin
       if (tvdbThread != null) {
         tvdbThread.Abort();
       }
-      GlobalServiceProvider.Instance.Get<ITvServerEvent>().OnTvServerEvent -= SchedulesDirect_OnTvServerEvent;
+
+      if (GlobalServiceProvider.Instance.IsRegistered<ITvServerEvent>())
+      {
+         GlobalServiceProvider.Instance.Get<ITvServerEvent>().OnTvServerEvent -= SchedulesDirect_OnTvServerEvent;
+      }
     }
     #endregion
 
