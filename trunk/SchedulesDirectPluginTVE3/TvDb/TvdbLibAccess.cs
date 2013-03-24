@@ -42,7 +42,7 @@ namespace SchedulesDirect.TvDb
 		}
 		
 		private void init() {
-		  string cache = PluginSettings.TvDbLibCache;
+		  string cache = Environment.ExpandEnvironmentVariables(PluginSettings.TvDbLibCache);
 		  string tvdbid = "BBB734ABE146900D";  // mine, don't abuse it!!!
 		  tvdbHandler = new TvdbHandler(new XmlCacheProvider(cache),tvdbid);
 		  tvdbHandler.InitCache();

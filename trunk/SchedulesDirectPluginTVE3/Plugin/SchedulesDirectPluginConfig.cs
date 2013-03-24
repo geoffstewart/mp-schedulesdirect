@@ -446,7 +446,7 @@ namespace SchedulesDirect.Plugin
 
     private void textBoxTvDbLibCache_TextChanged(object sender, EventArgs e)
     {
-      string myDir = textBoxTvDbLibCache.Text;
+      string myDir = Environment.ExpandEnvironmentVariables(textBoxTvDbLibCache.Text);
       if (!Directory.Exists(myDir)) {
         try {
           Directory.CreateDirectory(myDir);
