@@ -190,6 +190,33 @@ namespace SchedulesDirect.Plugin
     }
 
     /// <summary>
+    /// Gets or sets a value indicating whether a full update should happen next.
+    /// </summary>
+    /// <value>
+    /// 	<c>true</c> if [force full update]; otherwise, <c>false</c>.
+    /// </value>
+    static public bool ForceFullGuideUpdate
+    {
+        get
+        {
+            string gstr = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_ForceFullGuideUpdate", "false").Value;
+            if (gstr.ToLower() == "false".ToLower())
+                return false;
+            else
+                return true;
+        }
+        set
+        {
+            string sstr = "false";
+            if (value != false)
+                sstr = "true";
+            Setting mpSetting = tvLayer.GetSetting(SchedulesDirectPluginTVE3.PLUGIN_NAME + "_ForceFullGuideUpdate", "false");
+            mpSetting.Value = sstr;
+            mpSetting.Persist();
+        }
+    }
+
+    /// <summary>
     /// Gets or sets a value indicating whether the user wants to be notified when the import is complete.
     /// </summary>
     /// <value><c>true</c> if [notify on completion]; otherwise, <c>false</c>.</value>
