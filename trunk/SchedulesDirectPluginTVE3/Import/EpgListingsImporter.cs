@@ -13,6 +13,7 @@ using Gentle.Common;
 using Gentle.Framework;
 using SchedulesDirect.Plugin;
 using SchedulesDirect.TvDb;
+using System.Text.RegularExpressions;
 
 namespace SchedulesDirect.Import
 {
@@ -645,8 +646,11 @@ namespace SchedulesDirect.Import
                      }
                      
                      string sep = tvdb.getSeasonEpisode(zTitle,sid,zEpisode,tvProgram.OriginalAirDate,allowTailMatch);
-                     if (sep.Length > 0) {
-                       Program mpProgram = new Program(pCh.IdChannel,localStartTime,localEndTime,zTitle,description.ToString(),zGenre,Program.ProgramState.None,tvProgram.OriginalAirDate.Date,zSeriesNum,sep,zEpisode,zEpisodePart,mpStarRating,zClassification,zRatingAge);
+                     var match = Regex.Match(sep, @"S(?<season>\d+)E(?<episode>\d+)");
+                     if (match.Success) {
+                       var season = match.Groups["season"].Value;
+                       var episode = match.Groups["episode"].Value;
+                       Program mpProgram = new Program(pCh.IdChannel,localStartTime,localEndTime,zTitle,description.ToString(),zGenre,Program.ProgramState.None,tvProgram.OriginalAirDate.Date,season,episode,zEpisode,zEpisodePart,mpStarRating,zClassification,zRatingAge);
                      
                        UpdateProgram(mpProgram);
                        stats._iPrograms++;
