@@ -7,11 +7,11 @@ using MediaPortal.Common.Utils;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SchedulesDirectPluginTVE3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A MediaPortal plugin that provides EPG data for MediaPortal users in Canada/US/Mexico.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SchedulesDirectPluginTVE3")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,11 +32,11 @@ using MediaPortal.Common.Utils;
 //
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.2.3.2")]
-[assembly: AssemblyFileVersion("1.2.3.2")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
 
 [assembly: CompatibleVersion("1.1.6.27644")]
-[assembly: UsesSubsystem("TVE.Controller")]
+[assembly: UsesSubsystem("TVE.Scheduler")]
 [assembly: UsesSubsystem("TVE.DB")]
 [assembly: UsesSubsystem("TVE.Config")]
 [assembly: UsesSubsystem("TVE.Plugins")]
