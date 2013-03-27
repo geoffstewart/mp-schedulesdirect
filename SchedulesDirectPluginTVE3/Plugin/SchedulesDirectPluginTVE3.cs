@@ -16,6 +16,7 @@ using TvLibrary.Log;
 using Gentle.Common;
 using Gentle.Framework;
 using TvLibrary.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace SchedulesDirect.Plugin
 {
@@ -887,13 +888,22 @@ namespace SchedulesDirect.Plugin
                   DateTime zOrigAirDate = p.OriginalAirDate;
                   
                   string sep = tvdb.getSeasonEpisode(zTitle,sid,zEpisode,zOrigAirDate,true);
-                  
-                  if (sep != null && sep.Length > 0) {
-                    if (logdebug) {
-                      Log.Debug("Updating {0}: {1}: {2}: {3}",zTitle,zEpisode,sep,System.Convert.ToString(p.IdChannel));
-                    }
-                    p.EpisodeNum = sep;
-                    p.Persist();
+                  var match = Regex.Match(sep, @"S(?<season>\d+)E(?<episode>\d+)");
+                  if (match.Success)
+                  {
+                     var season = match.Groups["season"].Value;
+                     var episode = match.Groups["episode"].Value;
+
+                     if (sep != null && sep.Length > 0)
+                     {
+                        if (logdebug)
+                        {
+                           Log.Debug("Updating {0}: {1}: {2}: {3}", zTitle, zEpisode, sep, System.Convert.ToString(p.IdChannel));
+                        }
+                        p.SeriesNum = season;
+                        p.EpisodeNum = episode;
+                        p.Persist();
+                     }
                   }
                 } // foreach Program
               }
