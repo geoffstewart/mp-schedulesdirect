@@ -13,7 +13,7 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+              <LocalFileName>..\..\SchedulesDirectPluginTVE3\bin\x86\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
               <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
             </FileItem>
@@ -47,7 +47,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Description />
             </SectionParam>
             <SectionParam Name="Left part image">
-              <Value />
+              <Value>SideImage.jpg</Value>
               <ValueType>File</ValueType>
               <Description />
             </SectionParam>
@@ -103,12 +103,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Params>
           <Items>
             <SectionParam Name="Header text">
-              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <Value>The Extension Installer Wizard has successfully installed the [Name].</Value>
               <ValueType>String</ValueType>
               <Description />
             </SectionParam>
             <SectionParam Name="Left part image">
-              <Value />
+              <Value>SideImage.jpg</Value>
               <ValueType>File</ValueType>
               <Description />
             </SectionParam>
@@ -140,18 +140,18 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Id />
         <MinVersion>
           <Major>1</Major>
-          <Minor>2</Minor>
-          <Build>0</Build>
-          <Revision>3</Revision>
+          <Minor>3</Minor>
+          <Build>*</Build>
+          <Revision>*</Revision>
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
           <Minor>2</Minor>
-          <Build>0</Build>
-          <Revision>3</Revision>
+          <Build>3</Build>
+          <Revision>*</Revision>
         </MaxVersion>
-        <WarnOnly>false</WarnOnly>
-        <Message>requires TvServer version 1.2.3.</Message>
+        <WarnOnly>true</WarnOnly>
+        <Message>requires TvServer version 1.2.3.*-1.3.*.*</Message>
         <Name>TvServer</Name>
       </DependencyItem>
       <DependencyItem>
@@ -181,36 +181,38 @@ Click Next to continue or Cancel to exit Setup.</Value>
   <GeneralInfo>
     <Name>SchedulesDirect Plugin</Name>
     <Id>e14cf436-6e19-4b40-b65f-3bbc934ae521</Id>
-    <Author>Patrick</Author>
+    <Author>Patrick, Geoff Stewart</Author>
     <HomePage>http://code.google.com/p/mp-schedulesdirect/</HomePage>
     <ForumPage>http://forum.team-mediaportal.com/threads/schedules-direct-us-canadian-mexico-epg-plugin-updated-august-2010.26951/</ForumPage>
-    <UpdateUrl />
+    <UpdateUrl>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>2</Minor>
-      <Build>3</Build>
-      <Revision>2</Revision>
+      <Minor>3</Minor>
+      <Build>0</Build>
+      <Revision>0</Revision>
     </Version>
-    <ExtensionDescription>This plugin provides EPG data for users in Canada/US/Mexisco.  You need a ScheduleDirect account from schedulesdirect.org ($25/year).
+    <ExtensionDescription>This plugin provides EPG data for users in Canada/US/Mexico.  You need a ScheduleDirect account from schedulesdirect.org ($25/year).
 
 Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</ExtensionDescription>
-    <VersionDescription>Supports MP v1.2.3.
+    <VersionDescription>Supports MP v1.2.3-1.3.0
 
-Adds the ability to specify the audio input when the plugin creates new channels for digital cable and satellite users.</VersionDescription>
+-TvDb season and episode numbers now imported correctly allowing the default recording strings "%title%\%title% - S%series%E%episode% - %name%" to work.
+-'Force Update' now does a full update of all guide data.
+-TvDb cache directory now expands enviroment variables like %ProgramData% properly.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation />
-    <ReleaseDate>2012-05-07T22:20:42.9186016-04:00</ReleaseDate>
+    <OnlineLocation>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/SchedulesDirectPlugin-1.3.0.mpe1</OnlineLocation>
+    <ReleaseDate>2013-03-24T22:20:42</ReleaseDate>
     <Tags>schedulesdirect epg tvdb</Tags>
-    <Location>C:\Users\geoff\Documents\sd-plugin\package\SchedulesDirectPlugin-1.2.3.2.mpe1</Location>
+    <Location>..\SchedulesDirectPlugin-1.3.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
-          <Value />
+          <Value>sd.jpg</Value>
           <ValueType>File</ValueType>
           <Description>The icon file of the package (jpg,png,bmp)</Description>
         </SectionParam>
         <SectionParam Name="Online Icon">
-          <Value />
+          <Value>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/mpe1-project/sd.jpg</Value>
           <ValueType>String</ValueType>
           <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
         </SectionParam>
@@ -227,7 +229,7 @@ Adds the ability to specify the audio input when the plugin creates new channels
           <Description>Online stored screenshot urls separated by ; </Description>
         </SectionParam>
         <SectionParam Name="Force to uninstall on update">
-          <Value>yes</Value>
+          <Value>YES</Value>
           <ValueType>Bool</ValueType>
           <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
         </SectionParam>
@@ -239,7 +241,7 @@ Adds the ability to specify the audio input when the plugin creates new channels
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+        <LocalFileName>..\..\SchedulesDirectPluginTVE3\bin\x86\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
         <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
       </FileItem>
@@ -250,12 +252,26 @@ Adds the ability to specify the audio input when the plugin creates new channels
         <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
         <DestinationFilename>%TvServerPlugins%\TvdbLib.dll</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>SideImage.jpg</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e30516da-ce3d-49b5-9f1d-270ca307c2ac}-SideImage.jpg</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>sd.jpg</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{97a13279-aa00-461f-a161-aa4ffd0672be}-sd.jpg</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
     <ProjectFilename>installer.xmp2</ProjectFilename>
-    <UpdatePath1 />
+    <UpdatePath1>C:\Users\Clint\Documents\Visual Studio 2012\Projects\mp-schedulesdirect\package\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>
