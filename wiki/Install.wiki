@@ -1,16 +1,15 @@
 #summary How to install SchedulesDirect Plugin
 
-= Introduction =
+= Extension Installer =
 
-Simple outline of how to install the SD plugin
+This plugin should now show up in the MediaPortal extension installer and can be easily installed from there.  Otherwise, you can download the installer package from this site and double-click it to install. 
 
+= Manual Install =
 
-= Details =
-
-  * Download the rar or zip file from this site
-  * rar is a compressed file... use winrar or 7zip to uncompress it
+  * Download the source
+  * Compile it with Visual Studio Express for Windows Desktop
   * stop the MediaPortal TV Service
-  * Copy both DLL files into the MediaPortal TV Server\Plugins directory
+  * Copy both SchedulesDirectPluginTVE3.dll and TvdbLib.dll files into the "%Program Files%\Team MediaPortal\MediaPortal TV Server\Plugins" directory
   * Start the TV Service
   * Enable the SchedulesDirect plugin
   
