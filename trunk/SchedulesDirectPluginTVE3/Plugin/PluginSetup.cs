@@ -13,7 +13,7 @@ namespace SchedulesDirect.Plugin
   public class PluginSetup
   {
     internal const string PLUGIN_NAME = "SchedulesDirect EPG Client";
-    internal const string PLUGIN_VERSION = "1.2.3.2";
+    internal const string PLUGIN_VERSION = "1.3.0.1";
 
     #region ISetupForm Members
 

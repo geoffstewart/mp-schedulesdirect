@@ -146,12 +146,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
-          <Minor>2</Minor>
-          <Build>3</Build>
+          <Minor>3</Minor>
+          <Build>*</Build>
           <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
-        <Message>requires TvServer version 1.2.3.*-1.3.*.*</Message>
+        <Message>requires TvServer version 1.3.*.*</Message>
         <Name>TvServer</Name>
       </DependencyItem>
       <DependencyItem>
@@ -189,21 +189,21 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>1</Major>
       <Minor>3</Minor>
       <Build>0</Build>
-      <Revision>0</Revision>
+      <Revision>1</Revision>
     </Version>
     <ExtensionDescription>This plugin provides EPG data for users in Canada/US/Mexico.  You need a ScheduleDirect account from schedulesdirect.org ($25/year).
 
-Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</ExtensionDescription>
-    <VersionDescription>Supports MP v1.2.3-1.3.0
 
--TvDb season and episode numbers now imported correctly allowing the default recording strings "%title%\%title% - S%series%E%episode% - %name%" to work.
--'Force Update' now does a full update of all guide data.
--TvDb cache directory now expands enviroment variables like %ProgramData% properly.</VersionDescription>
+
+Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</ExtensionDescription>
+    <VersionDescription>Updates new channel column so channels can be changed by inputing the channel number.
+
+Requires user to force guide update in SD plugin settings and then restrart TVService</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/SchedulesDirectPlugin-1.3.0.mpe1</OnlineLocation>
+    <OnlineLocation>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/SchedulesDirectPlugin-1.3.0.1.mpe1</OnlineLocation>
     <ReleaseDate>2013-03-24T22:20:42</ReleaseDate>
-    <Tags>schedulesdirect epg tvdb</Tags>
-    <Location>..\SchedulesDirectPlugin-1.3.0.mpe1</Location>
+    <Tags>schedulesdirect, epg, tvdb</Tags>
+    <Location>..\SchedulesDirectPlugin-1.3.0.1.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -256,14 +256,14 @@ Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</E
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>SideImage.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e30516da-ce3d-49b5-9f1d-270ca307c2ac}-SideImage.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{db5e46c4-55b5-4a80-8aa2-13120b82c577}-SideImage.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>sd.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{97a13279-aa00-461f-a161-aa4ffd0672be}-sd.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{796cb970-5e7d-4422-82f5-ae6388224da0}-sd.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>

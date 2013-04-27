@@ -924,9 +924,7 @@ namespace SchedulesDirect.Plugin
       if (tvEvent.EventType == TvServerEventType.ScheduledAdded &&
           Plugin.PluginSettings.UseTvDb) {
         Log.WriteFile("SD-TvDb: Request update of tvdb.com information for scheduled recordings");
-        if (tvdbThread.IsAlive) {
-          tvdbThread.Start();
-        } else {
+        if (!tvdbThread.IsAlive) {
           tvdbThread = new Thread(AsyncTvDbInfoUpdate);
           tvdbThread.Name = "TvDbThread";
           tvdbThread.Start();

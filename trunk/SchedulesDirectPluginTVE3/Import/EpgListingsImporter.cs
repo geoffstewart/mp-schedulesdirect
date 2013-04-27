@@ -361,6 +361,7 @@ namespace SchedulesDirect.Import
                {
                   mpChannel.GrabEpg = false;
                   mpChannel.LastGrabTime = DateTime.Now;
+                  mpChannel.ChannelNumber = int.Parse(tvStationMap.SchedulesDirectChannel);
                   mpChannel.ExternalId = BuildXmlTvId(lineup.IsLocalBroadcast(), tvStation, tvStationMap);  //tvStation.ID + XMLTVID;
                   if (_renameChannels)
                   {
@@ -382,7 +383,7 @@ namespace SchedulesDirect.Import
                   string cname = BuildChannelName(tvStation, tvStationMap);
                   string xId   = BuildXmlTvId(lineup.IsLocalBroadcast(), tvStation, tvStationMap);
 
-                  mpChannel = new Channel(false, true, 0, Schedule.MinSchedule, false, Schedule.MinSchedule, 10000, true, xId, cname);
+                  mpChannel = new Channel(false, true, 0, Schedule.MinSchedule, false, Schedule.MinSchedule, 10000, true, xId, cname, int.Parse(tvStationMap.SchedulesDirectChannel));
                   mpChannel.Persist();
 
                   TvLibrary.Implementations.AnalogChannel tuningDetail = new TvLibrary.Implementations.AnalogChannel();
@@ -712,11 +713,11 @@ namespace SchedulesDirect.Import
          string channelName = string.Empty;
          if (tvStation != null && tvStationMap != null)
          {
-            channelName = this._channelNameTemplate.ToLower(System.Globalization.CultureInfo.CurrentCulture);
-            channelName = channelName.Replace("{callsign}", tvStation.CallSign);
-            channelName = channelName.Replace("{name}", tvStation.Name);
-            channelName = channelName.Replace("{affiliate}", tvStation.Affiliate);
-            channelName = channelName.Replace("{number}", tvStationMap.Channel);
+           channelName = this._channelNameTemplate.ToLower(System.Globalization.CultureInfo.CurrentCulture)
+             .Replace("{callsign}", tvStation.CallSign)
+             .Replace("{name}", tvStation.Name)
+             .Replace("{affiliate}", tvStation.Affiliate)
+             .Replace("{number}", tvStationMap.Channel);
             // debug
             //channelName = channelName + " BCNbr: " + tvStation.BroadcastChannelNumber.ToString();
             //channelName = channelName + " CMajr: " + tvStationMap.ChannelMajor.ToString();
