@@ -68,6 +68,8 @@ namespace SchedulesDirect.Plugin
     {
       timerThread = new System.Threading.Timer(new TimerCallback(RefreshEPG));
 
+      System.Net.ServicePointManager.Expect100Continue = false; 
+      
       Log.WriteFile("{0}: version {1} starting", Name, Assembly.GetExecutingAssembly().GetName().Version.ToString(3));
       Log.WriteFile("Date of last program entry in database currently {0}", GetLastProgramEntry());
       Log.WriteFile("Configured to grab {0} days of EPG data", PluginSettings.GuideDays);
