@@ -13,16 +13,16 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\..\SchedulesDirectPluginTVE3\bin\x86\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+              <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
-              <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+              <DestinationFilename>%Base%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
-              <DestinationFilename>%TvServerPlugins%\TvdbLib.dll</DestinationFilename>
+              <DestinationFilename>%Base%\TvdbLib.dll</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -182,12 +182,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Name>SchedulesDirect Plugin</Name>
     <Id>e14cf436-6e19-4b40-b65f-3bbc934ae521</Id>
     <Author>Patrick, Geoff Stewart</Author>
-    <HomePage>http://code.google.com/p/mp-schedulesdirect/</HomePage>
+    <HomePage>https://github.com/geoffstewart/mp-schedulesdirect</HomePage>
     <ForumPage>http://forum.team-mediaportal.com/threads/schedules-direct-us-canadian-mexico-epg-plugin-updated-august-2010.26951/</ForumPage>
-    <UpdateUrl>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/update.xml</UpdateUrl>
+    <UpdateUrl>https://github.com/geoffstewart/mp-schedulesdirect</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>3</Minor>
+      <Minor>11</Minor>
       <Build>0</Build>
       <Revision>1</Revision>
     </Version>
@@ -200,10 +200,10 @@ Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</E
 
 Requires user to force guide update in SD plugin settings and then restrart TVService</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation>https://mp-schedulesdirect.googlecode.com/svn/trunk/package/SchedulesDirectPlugin-1.3.0.1.mpe1</OnlineLocation>
+    <OnlineLocation>https://github.com/geoffstewart/mp-schedulesdirect/blob/master/package/SchedulesDirectPlugin-1.11.0.1.mpe1</OnlineLocation>
     <ReleaseDate>2013-03-24T22:20:42</ReleaseDate>
     <Tags>schedulesdirect, epg, tvdb</Tags>
-    <Location>..\SchedulesDirectPlugin-1.3.0.1.mpe1</Location>
+    <Location>..\SchedulesDirectPlugin-1.11.0.1.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -241,16 +241,16 @@ Requires user to force guide update in SD plugin settings and then restrart TVSe
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\..\SchedulesDirectPluginTVE3\bin\x86\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
+        <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
-        <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+        <DestinationFilename>%Base%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
-        <DestinationFilename>%TvServerPlugins%\TvdbLib.dll</DestinationFilename>
+        <DestinationFilename>%Base%\TvdbLib.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
@@ -271,7 +271,7 @@ Requires user to force guide update in SD plugin settings and then restrart TVSe
   <ProjectSettings>
     <FolderGroups />
     <ProjectFilename>installer.xmp2</ProjectFilename>
-    <UpdatePath1>C:\Users\Clint\Documents\Visual Studio 2012\Projects\mp-schedulesdirect\package\update.xml</UpdatePath1>
+    <UpdatePath1>C:\Users\geoff\Documents\mygit\mp-schedulesdirect\package\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>

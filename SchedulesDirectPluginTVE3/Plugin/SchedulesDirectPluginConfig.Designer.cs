@@ -247,7 +247,7 @@ namespace SchedulesDirect.Plugin
          // 
          this.numericUpDownDays.Location = new System.Drawing.Point(227, 46);
          this.numericUpDownDays.Maximum = new decimal(new int[] {
-            13,
+            22,
             0,
             0,
             0});
@@ -260,7 +260,7 @@ namespace SchedulesDirect.Plugin
          this.numericUpDownDays.Size = new System.Drawing.Size(49, 20);
          this.numericUpDownDays.TabIndex = 0;
          this.numericUpDownDays.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-         this.toolTip.SetToolTip(this.numericUpDownDays, "You can specify between 1 and 13 days of program\r\nguide data to download and keep" +
+         this.toolTip.SetToolTip(this.numericUpDownDays, "You can specify between 1 and 22 days of program\r\nguide data to download and keep" +
         " in MediaPortal.");
          this.numericUpDownDays.Value = new decimal(new int[] {
             5,
@@ -276,7 +276,7 @@ namespace SchedulesDirect.Plugin
          mpLabel3.Size = new System.Drawing.Size(188, 13);
          mpLabel3.TabIndex = 6;
          mpLabel3.Text = "&Number of days of guide data to keep:";
-         this.toolTip.SetToolTip(mpLabel3, "You can specify between 1 and 13 days of program\r\nguide data to download and keep" +
+         this.toolTip.SetToolTip(mpLabel3, "You can specify between 1 and 22 days of program\r\nguide data to download and keep" +
         " in MediaPortal.\r\n");
          // 
          // groupBoxLogon

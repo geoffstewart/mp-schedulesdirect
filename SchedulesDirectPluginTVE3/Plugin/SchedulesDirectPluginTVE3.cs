@@ -251,6 +251,10 @@ namespace SchedulesDirect.Plugin
       // Get the end time of the latest program entry in the Epg before we start any imports
       lastDbEntry = GetLastProgramEntry();
 
+      Log.WriteFile("TEST: Username: {0}", PluginSettings.Username);
+      if (PluginSettings.Password != null) {
+      	Log.WriteFile("TEST: Password was set");
+      }
       using (SchedulesDirect.SchedulesDirectWebService webService = new SchedulesDirect.SchedulesDirectWebService(PluginSettings.Username, PluginSettings.Password))
       {
         #region Update Epg with next 24 hours worth of data for last minute changes
@@ -263,9 +267,13 @@ namespace SchedulesDirect.Plugin
         // The Using is sometimes covering the WebException, so handle it here
         try
         {
+        	Log.WriteFile("TEST: About ot call webservice");
           listingData = webService.Download(startDate, endDate);
+          Log.WriteFile("TEST: Called webservice");
           result.SubscriptionExpiration = listingData.SubscriptionExpiration;
+          Log.WriteFile("TEST: Got Subscription Expiration");
           result.Messages = listingData.Messages;
+          Log.WriteFile("TEST: Got Messages");
           result.UpdateRequired = false;
         }
         catch (System.Net.WebException ex)
@@ -286,7 +294,7 @@ namespace SchedulesDirect.Plugin
           Log.WriteFile("WARNING: Skipping schedule import, appears there is a problem with the WebService");
           return result;
         }
-
+        Log.WriteFile("TEST: About to get stations");
         // Determine if there have been any changes in the SchedulesDirect channel lineup
         channelHash = GetStationsHash(listingData.Data.Stations);
         if (!PluginSettings.ChannelFingerprint.Equals(channelHash))
@@ -885,35 +893,42 @@ namespace SchedulesDirect.Plugin
               if (sid != null || sid.Length >= 0) {
                 
                 foreach (Program p in listOfNewShow) {
-                  string zTitle = p.Title;
-                  string zEpisode = p.EpisodeName;
-                  DateTime zOrigAirDate = p.OriginalAirDate;
-                  
-                  string sep = tvdb.getSeasonEpisode(zTitle,sid,zEpisode,zOrigAirDate,true);
-                  var match = Regex.Match(sep, @"S(?<season>\d+)E(?<episode>\d+)");
-                  if (match.Success)
-                  {
-                     var season = match.Groups["season"].Value;
-                     var episode = match.Groups["episode"].Value;
-
-                     if (sep != null && sep.Length > 0)
-                     {
-                        if (logdebug)
-                        {
-                           Log.Debug("Updating {0}: {1}: {2}: {3}", zTitle, zEpisode, sep, System.Convert.ToString(p.IdChannel));
-                        }
-                        p.SeriesNum = season;
-                        p.EpisodeNum = episode;
-                        p.Persist();
-                     }
-                  }
+              	  try {
+                    string zTitle = p.Title;
+                    string zEpisode = p.EpisodeName;
+                    DateTime zOrigAirDate = p.OriginalAirDate;
+                    
+                    
+                    string sep = tvdb.getSeasonEpisode(zTitle,sid,zEpisode,zOrigAirDate,true);
+                    var match = Regex.Match(sep, @"S(?<season>\d+)E(?<episode>\d+)");
+                    if (match.Success)
+                    {
+                       var season = match.Groups["season"].Value;
+                       var episode = match.Groups["episode"].Value;
+  
+                       if (sep != null && sep.Length > 0)
+                       {
+                          if (logdebug)
+                          {
+                             Log.Debug("Updating {0}: {1}: {2}: {3}", zTitle, zEpisode, sep, System.Convert.ToString(p.IdChannel));
+                          }
+                          p.SeriesNum = season;
+                          p.EpisodeNum = episode;
+                          p.Persist();
+                       }
+                    }
+              		} catch (Exception ex) {
+              			// allow other programs to be enriched even though this one failed
+              			Log.Error("Error processing specific series: {0}.  Message: {1}.  Stack: {2} ", p.Title, ex.Message, ex.StackTrace);
+              			
+              		}
                 } // foreach Program
               }
             }
           } //foreach Schedule
           tvdb.closeCache();
         } catch (Exception ex) {
-          Log.Error("Error trying to update tvdb.com info: {0}",ex.Message);
+          Log.Error("Error trying to update tvdb.com info: {0}\n {1}",ex.Message,ex.StackTrace);
         }
         Log.Debug("SD-TvDb: Finished asynch update of tvdb.com info for all schedule recordings.");
       }

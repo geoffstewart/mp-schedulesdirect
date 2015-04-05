@@ -180,7 +180,8 @@ namespace SchedulesDirect
       public SchedulesDirectWebServiceProxy(string username, string password)
       {
         Credentials         = new NetworkCredential(username, password, String.Empty);
-        Url                 = "http://webservices.schedulesdirect.tmsdatadirect.com/schedulesdirect/tvlistings/xtvdService";
+        Url                 = "http://dd.schedulesdirect.org/schedulesdirect/tvlistings/xtvdService";
+        //Url                 = "http://webservices.schedulesdirect.tmsdatadirect.com/schedulesdirect/tvlistings/xtvdService";
         //Url                 = "http://datadirect.webservices.zap2it.com/tvlistings/xtvdService";
         PreAuthenticate     = true;
         EnableDecompression = true; // Enables gzip and deflate compression (docs are wrong, this is NOT the default)
