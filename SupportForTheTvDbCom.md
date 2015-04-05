@@ -1,0 +1,48 @@
+# Introduction #
+
+The goal:  To record with MediaPortal and be able to have the recordings easily and automatically be added to MyTvSeries plugin using the SxxExx (Season/Episode) information.
+
+In the past, MediaPortal and SchedulesDirect users were not able to do this because the SchedulesDirect information did not contain the Season and Episode information.
+
+This plugin tries to solve this problem by using thetvdb.com to fill in the Season and Episode information when SchedulesDirect populates it's epg database.
+
+
+# Details #
+
+When the ScheduleDirect plugin retrieves your EPG database information, it now checks the following:
+  * Is tvdb.com support enabled
+  * if yes, it continues, otherwise it finishes it's work with getting the program data.
+  * for each program being added to the EPG database, it asks:
+    1. Is this program in the list of programs I'm scheduling to record?
+    1. If yes, use the Program name to retrieve the SxxExx information from thetvdb.com
+    1. If no, just save the program without thetvdb.com information
+
+The key here is that it will only query the shows that are set to be recorded (either once or over and over again).  That scales down the number of queries to thetvdb.com that are required.  **Be kind to thetvdb.com**, please.  Don't abuse it by setting this plugin to query just about all the shows in the database.  For my setup, that would result in about 80,000 queries for a full 13 day update.... very bad!
+
+# Setup #
+
+In the TV Server configuration tool, select the thetvdb.com tab.
+
+Enable the tvdb.com support by checking the box labeled "Do you want to search thetvdb.com for season and episode information?"
+
+The checkbox for logging is a work in progress.
+
+The Series Name Mapping is used when there is a discrepancy between the name of the show in SchedulesDirect and thetvdb.com.
+
+For example, I have a few mappings setup as follows:
+
+American Dad|American Dad!
+_for some reason, thetvdb.com has a ! at the end of this one_
+
+The Good Guys|The Good Guys (2010)
+_This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name_
+
+thetvdb.com access is provided by http://code.google.com/p/tvdblib/.  This great library caches the information from thetvdb.com to soften the blow on those servers.  You can specify the directory where the cache is stored.  Sometimes viewing the data from thetvdb.com directly helps debug why a show is not being matched properly.
+
+Lastly, thetvdb.com works because people contribute information and artwork to the database.  Please consider giving back to the community by doing so.
+
+In the latest version (svn18 or later), the plugin will refresh all the tvdb.com information for all scheduled recordings every time a new recording is added or if the TVService.exe is started.  This means you don't have to wait for up to 13 days to get newly scheduled shows information.
+
+To get the most out of this plugin with tvdb information, you should add the episode number to the file name of recordings.  I have mine set to this:
+
+> %title%\%title% - %episode% - %name%

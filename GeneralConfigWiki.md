@@ -1,0 +1,76 @@
+# Introduction #
+
+A wiki that tries to describe the configuration for the SchedulesDirect plugin.
+
+Most of the implementation existed prior to my involvement.  I added the tvvdb.com support.  But I will attempt to describe what each of the configurable items are.
+
+
+# Details #
+## Config Page 1 ##
+<img src='http://mp-schedulesdirect.googlecode.com/svn/wiki/images/config-1.png' />
+
+The first page, shown above, has some relatively obvious fields to fill in.
+
+**Username**: Schedules direct username
+**Password**: Schedules Direct password
+
+**Number of days of guide data to keep**:  This tells the plugin how many days ahead of now it should try to keep.  SD will only have 13 days of data (around that much), so that's the max.
+
+**Last minute guide changes**:  **looking for input**
+I think this field tells the plugin to refresh the data for the next 24 hours (if that's the setting) to get any changes in the data for the current day's recordings.
+
+
+## Config Page 2 ##
+<img src='http://mp-schedulesdirect.googlecode.com/svn/wiki/images/config-2.png' />
+
+**Channel Name format**:  Use the value shown in the image {number} {callsign}.  It will be "514 CBOTHD".
+
+**Rename existing channels and logos to new name format**:  I leave this unchecked... This is to try and fix an existing database.   IMHO, if you have improper names, it's just best to delete the channels and start over than to get the plugin to try and fix it.
+
+So, I have Digital Cable... and the next section matters to me.  But, if you don't have a settop box, then your channels will already be added by the tuner on your card, and you can skip this section.
+
+**Automatically add new digital cable/satellite channels**: I always have this checkes... so when a new channel is added in SchedulesDirect, I get it in my guide.
+
+**External Video Input for new channels**: this is the input on your tuner to get this channel.  I use the HDPVR and it's the component input.
+
+**Country for new channels**: I don't think this is relevant
+
+**Include analog channels**: **need input**
+I think you need to leave this unchecked, but I'm not sure.
+
+**Force Guide update on next TvService startup**:
+Use this checkbox to test your setup.  Check it, restart the TVService using the service control (My Computer (right mouse click) Manage->Services).
+Once the TVService is started, this checkbox is cleared.
+
+**Sort by channel number**: what it says
+
+**Delete channels when removed from lineup**: I never want plugins to delete my channels... so leave this unchecked
+
+**Allow EPG Channel Mapping by Channel number only**:
+Part of the plugin's job is to match channels in SchedulesDirect to channels in MP.  It uses callsign, channel number, etc to try to match.  With this checked, it will match on channel number only.
+
+**Re-Map channels when lineup change detected**: Again, I don't want my plugin trying to fix a messed up database.  If enough has changed, might be cleaner to to a complete wipe and reset.  Your mileage may vary.  Use this with caution.
+
+
+## Config Page 2 ##
+<img src='http://mp-schedulesdirect.googlecode.com/svn/wiki/images/config-3.png' />
+
+**Do you want to search thetvdb.com for season and episode information**: Check this box if you want to get SxxExx info for your EPG.
+
+**Debug logging**: Not really useful for anyone but me :)
+
+**Mapping**
+
+The Series Name Mapping is used when there is a discrepancy between the name of the show in SchedulesDirect? and thetvdb.com.
+
+For example, I have a few mappings setup as follows:
+
+American Dad|American Dad! for some reason, thetvdb.com has a ! at the end of this one
+
+The Good Guys|The Good Guys (2010) This type of mapping happens a lot when a show name is reused... to see if this why you get no matches, go to thetvdb.com and search for your series... if you get more than one match, you will have to specify the year or the proper name.
+
+You can also specify the tvdb.com by series ID. In the setuptv.exe tool, you can use the checkbox in the mapping and in the tvdb.com field, enter the ID found on the website for the series in question.
+For "$..! My Dad Says", you would put "$..! My Dad Says" in the Schedules Direct name, and 164951 in the tvdb.com field as well as check the box that says Series ID before adding the mapping. The ID is found in the URL when you're looking at the series on thetvdb.com website.
+
+**TvDbLib Cache Location**:
+This part of the plugin uses this tvdblib to get info from thetvdb.com.  It does this by storing XML data for each show to cache the searches required to the actual site.  This value specifies the directory where the XML does will be stored.
