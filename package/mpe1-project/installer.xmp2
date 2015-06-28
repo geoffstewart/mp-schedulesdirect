@@ -15,14 +15,14 @@
               <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
-              <DestinationFilename>%Base%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+              <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
-              <DestinationFilename>%Base%\TvdbLib.dll</DestinationFilename>
+              <DestinationFilename>%TvServerBase%\TvdbLib.dll</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -146,12 +146,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
         </MinVersion>
         <MaxVersion>
           <Major>1</Major>
-          <Minor>3</Minor>
+          <Minor>15</Minor>
           <Build>*</Build>
           <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>true</WarnOnly>
-        <Message>requires TvServer version 1.3.*.*</Message>
+        <Message>requires TvServer version 1.3.*.* or higher</Message>
         <Name>TvServer</Name>
       </DependencyItem>
       <DependencyItem>
@@ -169,8 +169,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Build>6</Build>
           <Revision>27644</Revision>
         </MaxVersion>
-        <WarnOnly>false</WarnOnly>
-        <Message>requires MediaPortal version 1.1.6.27644 to 1.1.6.27644.</Message>
+        <WarnOnly>true</WarnOnly>
+        <Message>This version of SchedulesDirect Plugin requires MediaPortal 1.2.0 Beta or higher!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -189,7 +189,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>1</Major>
       <Minor>11</Minor>
       <Build>0</Build>
-      <Revision>1</Revision>
+      <Revision>2</Revision>
     </Version>
     <ExtensionDescription>This plugin provides EPG data for users in Canada/US/Mexico.  You need a ScheduleDirect account from schedulesdirect.org ($25/year).
 
@@ -201,9 +201,9 @@ Plugin originally authored by Patrick.  Currently maintained by geoffstewart.</E
 Requires user to force guide update in SD plugin settings and then restrart TVService</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>https://github.com/geoffstewart/mp-schedulesdirect/blob/master/package/SchedulesDirectPlugin-1.11.0.1.mpe1</OnlineLocation>
-    <ReleaseDate>2013-03-24T22:20:42</ReleaseDate>
+    <ReleaseDate>2015-06-27T22:20:42</ReleaseDate>
     <Tags>schedulesdirect, epg, tvdb</Tags>
-    <Location>..\SchedulesDirectPlugin-1.11.0.1.mpe1</Location>
+    <Location>..\SchedulesDirectPlugin-1.11.0.2.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -243,27 +243,27 @@ Requires user to force guide update in SD plugin settings and then restrart TVSe
         <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\..\SchedulesDirectPluginTVE3\obj\Debug\SchedulesDirectPluginTVE3.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0b4aa39b-b4bd-4af4-a9eb-a5240fac4c6a}-SchedulesDirectPluginTVE3.dll</ZipFileName>
-        <DestinationFilename>%Base%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
+        <DestinationFilename>%TvServerPlugins%\SchedulesDirectPluginTVE3.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\..\lib\TvdbLib.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{d38b1c5b-f6ef-46c4-ae30-a173b26a179d}-TvdbLib.dll</ZipFileName>
-        <DestinationFilename>%Base%\TvdbLib.dll</DestinationFilename>
+        <DestinationFilename>%TvServerBase%\TvdbLib.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>SideImage.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{db5e46c4-55b5-4a80-8aa2-13120b82c577}-SideImage.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{1dc4b639-be5f-4d62-86dd-5f51802b94ef}-SideImage.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>sd.jpg</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{796cb970-5e7d-4422-82f5-ae6388224da0}-sd.jpg</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{741856a4-a66b-48b7-b567-8733b1575b4f}-sd.jpg</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
